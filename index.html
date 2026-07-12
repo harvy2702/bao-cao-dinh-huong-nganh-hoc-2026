@@ -1,1592 +1,405 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="vi-VN" xml:lang="vi-VN">
+<!doctype html>
+<html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Tài liệu phục vụ thảo luận và đăng ký nguyện vọng" />
-  <title>BA CON ĐƯỜNG ĐÀO TẠO VÀ LỘ TRÌNH PHÁT TRIỂN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="So sánh ba con đường đào tạo: UET AI/Khoa học dữ liệu, NEU MIS/AI EP16 và NEU Fintech EP09.">
+  <title>So sánh ba con đường đào tạo 2026</title>
   <style>
-
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-
-ul.task-list[class]{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-font-size: inherit;
-width: 0.8em;
-margin: 0 0.8em 0.2em -1.6em;
-vertical-align: middle;
-}
-.display.math{display: block; text-align: center; margin: 0.5rem auto;}
-</style>
-  <style type="text/css">:root {
---bg: #f4f7fb;
---paper: #ffffff;
---ink: #172033;
---muted: #5f6b7a;
---line: #dce3ec;
---navy: #123b67;
---uet: #1769aa;
---neu: #9e1b32;
---fintech: #0b7a65;
---gold: #c88920;
---soft-blue: #eaf4fc;
---soft-red: #fbeef1;
---soft-green: #e9f7f3;
---shadow: 0 12px 32px rgba(25, 46, 78, .10);
---radius: 18px;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-margin: 0;
-color: var(--ink);
-background:
-radial-gradient(circle at 8% 8%, rgba(23,105,170,.10), transparent 24rem),
-radial-gradient(circle at 92% 2%, rgba(158,27,50,.08), transparent 22rem),
-var(--bg);
-font-family: Inter, "Segoe UI", Arial, sans-serif;
-font-size: 17px;
-line-height: 1.72;
-}
-#reading-progress {
-position: fixed;
-z-index: 1000;
-top: 0;
-left: 0;
-height: 4px;
-width: 0;
-background: linear-gradient(90deg, var(--uet), var(--neu), var(--fintech));
-}
-.toolbar {
-position: fixed;
-z-index: 900;
-top: 18px;
-right: 22px;
-display: flex;
-gap: 8px;
-}
-.toolbar button {
-border: 1px solid rgba(255,255,255,.35);
-border-radius: 999px;
-padding: 9px 14px;
-color: white;
-background: rgba(14,35,61,.78);
-backdrop-filter: blur(12px);
-cursor: pointer;
-font: inherit;
-font-size: 13px;
-font-weight: 700;
-}
-.toolbar button:hover { background: #0e233d; }
-header#title-block-header {
-min-height: 480px;
-display: grid;
-place-content: center;
-padding: 90px 24px 70px;
-color: white;
-text-align: center;
-background:
-linear-gradient(135deg, rgba(10,45,79,.96), rgba(23,105,170,.90) 45%, rgba(122,23,47,.93)),
-#123b67;
-border-bottom: 6px solid rgba(255,255,255,.25);
-}
-header#title-block-header::before {
-content: "BÁO CÁO ĐỊNH HƯỚNG 2026";
-display: inline-block;
-justify-self: center;
-margin-bottom: 24px;
-padding: 7px 14px;
-border: 1px solid rgba(255,255,255,.45);
-border-radius: 999px;
-font-size: 12px;
-font-weight: 800;
-letter-spacing: .16em;
-}
-h1.title {
-max-width: 900px;
-margin: 0 auto 16px;
-font-size: clamp(38px, 6vw, 66px);
-line-height: 1.06;
-letter-spacing: -.035em;
-text-transform: uppercase;
-}
-p.subtitle {
-max-width: 900px;
-margin: 0 auto 22px;
-color: rgba(255,255,255,.88);
-font-size: clamp(18px, 2.5vw, 25px);
-}
-p.author, p.date { margin: 4px 0; color: rgba(255,255,255,.72); font-size: 14px; }
-nav#TOC {
-position: sticky;
-z-index: 100;
-top: 0;
-max-height: 100vh;
-overflow: auto;
-padding: 19px max(22px, calc((100vw - 1180px)/2));
-border-bottom: 1px solid var(--line);
-background: rgba(255,255,255,.94);
-box-shadow: 0 5px 20px rgba(27,48,78,.07);
-backdrop-filter: blur(16px);
-}
-nav#TOC > ul {
-display: flex;
-gap: 8px;
-align-items: center;
-margin: 0;
-padding: 0;
-overflow-x: auto;
-list-style: none;
-scrollbar-width: thin;
-}
-nav#TOC > ul > li { flex: 0 0 auto; }
-nav#TOC > ul > li > a {
-display: block;
-padding: 8px 12px;
-border-radius: 999px;
-color: var(--navy);
-text-decoration: none;
-font-size: 13px;
-font-weight: 750;
-white-space: nowrap;
-}
-nav#TOC > ul > li > a:hover { color: white; background: var(--navy); }
-nav#TOC ul ul { display: none; }
-body > section,
-body > h1,
-body > h2,
-body > p,
-body > ul,
-body > ol,
-body > table,
-body > hr {
-max-width: 1120px;
-margin-left: auto;
-margin-right: auto;
-}
-section.level1 {
-max-width: 1120px;
-margin: 26px auto;
-padding: 42px clamp(22px, 5vw, 60px);
-border: 1px solid rgba(214,224,236,.9);
-border-radius: var(--radius);
-background: var(--paper);
-box-shadow: var(--shadow);
-scroll-margin-top: 90px;
-}
-section.path-uet { border-top: 7px solid var(--uet); }
-section.path-neu { border-top: 7px solid var(--neu); }
-section.path-fintech { border-top: 7px solid var(--fintech); }
-section.path-uet > h1::before,
-section.path-neu > h1::before,
-section.path-fintech > h1::before {
-display: block;
-margin-bottom: 9px;
-font-size: 12px;
-letter-spacing: .16em;
-font-weight: 850;
-}
-section.path-uet > h1::before { content: "CON ĐƯỜNG 01 · TECHNOLOGY FIRST"; color: var(--uet); }
-section.path-neu > h1::before { content: "CON ĐƯỜNG 02 · TECHNOLOGY × BUSINESS"; color: var(--neu); }
-section.path-fintech > h1::before { content: "CON ĐƯỜNG 03 · FINANCE × TECHNOLOGY"; color: var(--fintech); }
-h1, h2, h3, h4 { color: #132a46; line-height: 1.25; }
-section.level1 > h1 {
-margin: 0 0 28px;
-font-size: clamp(29px, 4vw, 43px);
-letter-spacing: -.025em;
-}
-h2 {
-margin-top: 40px;
-padding-bottom: 10px;
-border-bottom: 1px solid var(--line);
-font-size: 26px;
-}
-h3 { margin-top: 30px; font-size: 21px; }
-h4 { font-size: 18px; }
-p { margin: 12px 0; }
-strong { color: #0e355d; }
-ul, ol { padding-left: 25px; }
-li { margin: 7px 0; }
-li::marker { color: var(--uet); font-weight: 800; }
-blockquote {
-margin: 24px 0;
-padding: 18px 22px;
-border-left: 5px solid var(--gold);
-border-radius: 0 12px 12px 0;
-color: #4c402a;
-background: #fff8e8;
-}
-.table-wrap { overflow-x: auto; margin: 24px 0 34px; border-radius: 14px; }
-table {
-width: 100%;
-border-collapse: separate;
-border-spacing: 0;
-overflow: hidden;
-border: 1px solid var(--line);
-border-radius: 14px;
-font-size: 14px;
-line-height: 1.45;
-background: white;
-}
-thead th {
-padding: 15px 14px;
-color: white;
-text-align: left;
-background: var(--navy);
-}
-tbody td { padding: 14px; border-top: 1px solid var(--line); vertical-align: top; }
-tbody tr:nth-child(even) { background: #f7f9fc; }
-tbody tr:hover { background: #edf5fb; }
-a { color: #0b64a0; text-underline-offset: 3px; }
-a:hover { color: var(--neu); }
-details.timeline {
-margin: 12px 0;
-overflow: hidden;
-border: 1px solid var(--line);
-border-left: 5px solid var(--uet);
-border-radius: 13px;
-background: #fbfdff;
-}
-details.timeline summary {
-padding: 16px 18px;
-color: #173c63;
-cursor: pointer;
-font-weight: 800;
-list-style-position: inside;
-background: #edf6fd;
-}
-details.timeline[open] summary { border-bottom: 1px solid var(--line); }
-details.timeline > *:not(summary) { margin-left: 24px; margin-right: 24px; }
-details.timeline > *:last-child { margin-bottom: 22px; }
-.path-neu details.timeline { border-left-color: var(--neu); }
-.path-neu details.timeline summary { color: #762036; background: var(--soft-red); }
-.path-fintech details.timeline { border-left-color: var(--fintech); }
-.path-fintech details.timeline summary { color: #08614f; background: var(--soft-green); }
-.callout {
-margin: 28px 0;
-padding: 22px 24px;
-border-radius: 14px;
-background: linear-gradient(120deg, #eef6fd, #f8fbff);
-border: 1px solid #cde2f2;
-}
-.callout::before {
-content: "ĐIỂM CẦN NHỚ";
-display: block;
-margin-bottom: 7px;
-color: var(--uet);
-font-size: 11px;
-font-weight: 900;
-letter-spacing: .14em;
-}
-.dark-mode {
---bg: #0d1623;
---paper: #162235;
---ink: #e7edf6;
---muted: #b1bdca;
---line: #314156;
---navy: #88bde8;
---soft-blue: #19334d;
---soft-red: #3b2230;
---soft-green: #153d35;
---shadow: 0 12px 32px rgba(0,0,0,.28);
-}
-.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4,
-.dark-mode strong { color: #eaf3fb; }
-.dark-mode table, .dark-mode tbody tr:nth-child(even) { background: #172538; }
-.dark-mode tbody tr:hover { background: #20344c; }
-.dark-mode thead th { color: #0d1623; background: #9bc8eb; }
-.dark-mode nav#TOC { background: rgba(20,32,49,.95); }
-.dark-mode nav#TOC > ul > li > a { color: #d8e8f6; }
-.dark-mode details.timeline { background: #172538; }
-.dark-mode .callout { background: #19334d; border-color: #315675; }
-@media (max-width: 760px) {
-body { font-size: 16px; }
-header#title-block-header { min-height: 440px; padding-top: 90px; }
-.toolbar { top: 12px; right: 12px; }
-.toolbar button { padding: 8px 11px; }
-section.level1 { margin: 14px 10px; padding: 30px 20px; border-radius: 14px; }
-nav#TOC { padding-left: 10px; padding-right: 10px; }
-h2 { font-size: 22px; }
-table { min-width: 720px; }
-}
-@media print {
-body { background: white; font-size: 11pt; }
-#reading-progress, .toolbar, nav#TOC { display: none !important; }
-header#title-block-header { min-height: 0; padding: 70px 40px; print-color-adjust: exact; }
-section.level1 { margin: 0; padding: 28px 0; border: 0; box-shadow: none; break-before: page; }
-section.level1:first-of-type { break-before: auto; }
-details.timeline { break-inside: avoid; }
-details.timeline > * { display: block !important; }
-a { color: inherit; text-decoration: none; }
-}
-</style>
+    :root {
+      --bg: #eef3f8;
+      --paper: #fff;
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --line: #d9e2ec;
+      --uet: #1769aa;
+      --neu: #9e1b32;
+      --fin: #087864;
+      --navy: #123b67;
+      --shadow: 0 18px 45px rgba(25, 46, 78, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 5% 2%, rgba(23,105,170,.13), transparent 28rem),
+        radial-gradient(circle at 95% 0%, rgba(158,27,50,.10), transparent 26rem),
+        var(--bg);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.55;
+    }
+    header {
+      padding: 58px 24px 38px;
+      color: white;
+      text-align: center;
+      background: linear-gradient(135deg, #0e355d, #1769aa 48%, #7b2038);
+    }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .15em;
+    }
+    h1 {
+      max-width: 900px;
+      margin: 0 auto 12px;
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    header p { max-width: 860px; margin: 0 auto; color: rgba(255,255,255,.82); font-size: 17px; }
+    main { max-width: 1600px; margin: 0 auto; padding: 28px 18px 54px; }
+    .context {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 16px;
+    }
+    .context p { margin: 0; color: var(--muted); font-size: 14px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+    .chip {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #33465b;
+      background: rgba(255,255,255,.8);
+      font-size: 12px;
+      font-weight: 750;
+    }
+    .scroll-hint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
+      color: #526477;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .scroll-hint span { color: var(--uet); font-size: 19px; }
+    .table-shell {
+      max-height: calc(100vh - 110px);
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overscroll-behavior: contain;
+      scrollbar-color: #97adc3 #edf2f7;
+    }
+    table {
+      width: 100%;
+      min-width: 1580px;
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+      font-size: 14px;
+    }
+    col.route { width: 245px; }
+    col.essence { width: 300px; }
+    col.traits { width: 330px; }
+    col.journey { width: 395px; }
+    col.jobs { width: 310px; }
+    thead th {
+      position: sticky;
+      z-index: 20;
+      top: 0;
+      padding: 17px 16px;
+      color: white;
+      text-align: left;
+      vertical-align: bottom;
+      background: var(--navy);
+      border-right: 1px solid rgba(255,255,255,.16);
+      font-size: 13px;
+      letter-spacing: .02em;
+    }
+    thead th:first-child { z-index: 30; left: 0; background: #0c2e50; }
+    tbody th, tbody td {
+      padding: 20px 18px;
+      vertical-align: top;
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      background: white;
+    }
+    tbody th {
+      position: sticky;
+      z-index: 10;
+      left: 0;
+      color: white;
+      text-align: left;
+      box-shadow: 8px 0 16px rgba(20, 42, 70, .09);
+    }
+    tr.uet th { background: linear-gradient(145deg, #0f578f, var(--uet)); }
+    tr.neu th { background: linear-gradient(145deg, #76162b, var(--neu)); }
+    tr.fin th { background: linear-gradient(145deg, #075b4d, var(--fin)); }
+    tbody tr:hover td { background: #f7fafc; }
+    .route-no {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,.72);
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .14em;
+    }
+    .route-name { display: block; font-size: 20px; line-height: 1.22; }
+    .route-sub { display: block; margin-top: 9px; color: rgba(255,255,255,.82); font-size: 12px; font-weight: 500; }
+    .score {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 5px 8px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 8px;
+      font-size: 11px;
+    }
+    h2 { margin: 0 0 10px; color: #173b61; font-size: 16px; }
+    p { margin: 0 0 9px; }
+    ul { margin: 7px 0 0; padding-left: 18px; }
+    li { margin: 7px 0; }
+    li::marker { color: #2973a8; }
+    strong { color: #133f69; }
+    .phase {
+      display: block;
+      margin: 12px 0 5px;
+      color: #6f2940;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid #d7e4ef;
+      border-radius: 14px;
+      color: #43576b;
+      background: rgba(255,255,255,.82);
+      font-size: 13px;
+    }
+    .note strong { color: #173b61; }
+    footer { padding: 0 18px 34px; color: #667689; text-align: center; font-size: 12px; }
+    a { color: #1769aa; text-underline-offset: 3px; }
+    @media (max-width: 760px) {
+      header { padding: 42px 20px 30px; text-align: left; }
+      header p, h1 { margin-left: 0; }
+      main { padding: 20px 10px 40px; }
+      .context { align-items: flex-start; flex-direction: column; }
+      .table-shell { max-height: 72vh; border-radius: 13px; }
+      table { min-width: 1500px; }
+      col.route { width: 220px; }
+      tbody th, tbody td { padding: 17px 15px; }
+    }
+    @media print {
+      @page { size: A3 landscape; margin: 10mm; }
+      body { background: white; }
+      header { padding: 24px; print-color-adjust: exact; }
+      main { max-width: none; padding: 15px 0; }
+      .scroll-hint { display: none; }
+      .table-shell { max-height: none; overflow: visible; border: 0; box-shadow: none; }
+      table { min-width: 0; font-size: 9pt; }
+      tbody th, thead th { position: static; print-color-adjust: exact; }
+      footer { padding-bottom: 0; }
+    }
+  </style>
 </head>
 <body>
-<div id="reading-progress" aria-hidden="true"></div>
-<div class="toolbar" aria-label="Công cụ tài liệu">
-  <button id="expand-all" type="button">Mở lộ trình</button>
-  <button id="theme-toggle" type="button">Chế độ tối</button>
-  <button id="print-report" type="button">In / PDF</button>
-</div>
-<header id="title-block-header">
-<h1 class="title">BA CON ĐƯỜNG ĐÀO TẠO VÀ LỘ TRÌNH PHÁT TRIỂN</h1>
-<p class="subtitle">UET – Công nghệ chuyên sâu | NEU – Công nghệ gắn với
-kinh tế | NEU – Fintech</p>
-<p class="author">Tài liệu phục vụ thảo luận và đăng ký nguyện vọng</p>
-<p class="date">Cập nhật ngày 12/07/2026</p>
-</header>
-<nav id="TOC" role="doc-toc">
-<ul>
-<li><a href="#mục-đích-của-tài-liệu" id="toc-mục-đích-của-tài-liệu">Mục
-đích của tài liệu</a></li>
-<li><a href="#bối-cảnh-của-ứng-viên" id="toc-bối-cảnh-của-ứng-viên">Bối
-cảnh của ứng viên</a></li>
-<li><a href="#bản-đồ-ba-lựa-chọn" id="toc-bản-đồ-ba-lựa-chọn">Bản đồ ba
-lựa chọn</a></li>
-<li><a href="#lựa-chọn-1--uet-trí-tuệ-nhân-tạo-hoặc-khoa-học-dữ-liệu" id="toc-lựa-chọn-1--uet-trí-tuệ-nhân-tạo-hoặc-khoa-học-dữ-liệu">Lựa chọn
-1 – UET: Trí tuệ nhân tạo hoặc Khoa học dữ liệu</a></li>
-<li><a href="#lựa-chọn-2--neu-hệ-thống-thông-tin-quản-lý-hoặc-trí-tuệ-nhân-tạo-ep16" id="toc-lựa-chọn-2--neu-hệ-thống-thông-tin-quản-lý-hoặc-trí-tuệ-nhân-tạo-ep16">Lựa
-chọn 2 – NEU: Hệ thống thông tin quản lý hoặc Trí tuệ nhân tạo
-EP16</a></li>
-<li><a href="#lựa-chọn-3--neu-công-nghệ-tài-chính-và-ngân-hàng-số-ep09-bằng-tiếng-anh" id="toc-lựa-chọn-3--neu-công-nghệ-tài-chính-và-ngân-hàng-số-ep09-bằng-tiếng-anh">Lựa
-chọn 3 – NEU: Công nghệ tài chính và Ngân hàng số EP09 bằng tiếng
-Anh</a></li>
-<li><a href="#các-năng-lực-chung-bắt-buộc-dù-chọn-ngành-nào" id="toc-các-năng-lực-chung-bắt-buộc-dù-chọn-ngành-nào">Các năng lực
-chung bắt buộc dù chọn ngành nào</a></li>
-<li><a href="#gợi-ý-nguồn-tự-học-quốc-tế" id="toc-gợi-ý-nguồn-tự-học-quốc-tế">Gợi ý nguồn tự học quốc tế</a></li>
-<li><a href="#tựu-chung-ba-con-đường" id="toc-tựu-chung-ba-con-đường">Tựu chung ba con đường</a></li>
-<li><a href="#kết-luận" id="toc-kết-luận">Kết luận</a></li>
-<li><a href="#nguồn-thông-tin-chính-thức" id="toc-nguồn-thông-tin-chính-thức">Nguồn thông tin chính thức</a></li>
-</ul>
-</nav>
-<section id="mục-đích-của-tài-liệu" class="level1">
-<h1>Mục đích của tài liệu</h1>
-<p>Tài liệu này không nhằm chọn thay ứng viên một ngành học. Mục tiêu là
-làm rõ ba con đường có thể lựa chọn, giá trị mà mỗi con đường mang lại
-và những việc ứng viên cần chủ động thực hiện trong bốn năm đại học để
-tận dụng được thế mạnh của con đường đó.</p>
-<p>Quan điểm xuyên suốt là: <strong>ngành học ở tuổi 18 không quyết định
-tuyệt đối thành công trong tương lai</strong>. Cả ba lựa chọn trong tài
-liệu đều có thể dẫn tới một sự nghiệp tốt. Kết quả phụ thuộc nhiều hơn
-vào mức độ phù hợp, khả năng tự học, năng lực xây dựng kinh nghiệm thực
-tế, tiếng Anh, mạng lưới quan hệ và sự kiên trì tích lũy trong suốt quá
-trình học.</p>
-<p>Vì vậy, câu hỏi đúng không chỉ là “ngành nào tốt nhất?” mà còn
-là:</p>
-<ul>
-<li>Nếu chọn con đường này, ứng viên có sẵn sàng chấp nhận đặc điểm và
-yêu cầu của nó không?</li>
-<li>Ứng viên cần học thêm gì ngoài chương trình chính khóa?</li>
-<li>Sau mỗi năm đại học, ứng viên phải tạo ra được kết quả cụ thể
-nào?</li>
-<li>Môi trường của trường có giúp ứng viên phát huy tính cách và thế
-mạnh cá nhân không?</li>
-</ul>
-</section>
-<section id="bối-cảnh-của-ứng-viên" class="level1">
-<h1>Bối cảnh của ứng viên</h1>
-<ul>
-<li>Điểm quy đổi sử dụng để tham khảo tuyển sinh năm 2026: <strong>27,74
-điểm</strong>.</li>
-<li>Ứng viên là nữ và đang cân nhắc giữa môi trường công nghệ chuyên sâu
-của UET với môi trường kinh tế, kinh doanh và hoạt động sinh viên năng
-động hơn của NEU.</li>
-<li>Các lựa chọn đều liên quan đến công nghệ, dữ liệu, trí tuệ nhân tạo,
-hệ thống thông tin hoặc tài chính số.</li>
-<li>Điểm chuẩn năm 2025 chỉ là mốc tham khảo. Điểm chuẩn năm 2026 có thể
-thay đổi theo chỉ tiêu, số lượng hồ sơ, phương thức xét tuyển và cách
-quy đổi điểm.</li>
-</ul>
-<section id="vị-trí-điểm-2774-so-với-mốc-năm-2025" class="level2">
-<h2>Vị trí điểm 27,74 so với mốc năm 2025</h2>
-<table>
-<thead>
-<tr>
-<th>Ngành/chương trình</th>
-<th style="text-align: right;">Mốc điểm 2025</th>
-<th style="text-align: right;">Chênh lệch của 27,74</th>
-<th>Cách hiểu</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UET – Trí tuệ nhân tạo</td>
-<td style="text-align: right;">27,75</td>
-<td style="text-align: right;">-0,01</td>
-<td>Nguyện vọng thử sức; rất sát mốc cũ</td>
-</tr>
-<tr>
-<td>UET – Khoa học dữ liệu</td>
-<td style="text-align: right;">27,38</td>
-<td style="text-align: right;">+0,36</td>
-<td>Có khả năng cạnh tranh, không phải chắc chắn</td>
-</tr>
-<tr>
-<td>NEU – Hệ thống thông tin quản lý</td>
-<td style="text-align: right;">27,50</td>
-<td style="text-align: right;">+0,24</td>
-<td>Có khả năng cạnh tranh, không phải chắc chắn</td>
-</tr>
-<tr>
-<td>NEU – Trí tuệ nhân tạo EP16</td>
-<td style="text-align: right;">25,44</td>
-<td style="text-align: right;">+2,30</td>
-<td>Khoảng đệm tốt hơn nếu cách quy đổi tương thích</td>
-</tr>
-<tr>
-<td>NEU – Công nghệ tài chính và Ngân hàng số EP09</td>
-<td style="text-align: right;">26,29</td>
-<td style="text-align: right;">+1,45</td>
-<td>Khoảng đệm tốt hơn nếu cách quy đổi tương thích</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Lưu ý:</strong> EP16 là chương trình Trí tuệ nhân tạo giảng
-dạy 100% bằng tiếng Anh, thuộc Khoa Khoa học dữ liệu và Trí tuệ nhân tạo
-– Trường Công nghệ của NEU. EP16 không thuộc Khoa Hệ thống thông tin
-quản lý.</p>
-</section>
-</section>
-<section id="bản-đồ-ba-lựa-chọn" class="level1">
-<h1>Bản đồ ba lựa chọn</h1>
-<table>
-<thead>
-<tr>
-<th>Lựa chọn</th>
-<th>Trọng tâm</th>
-<th>Lợi thế chính</th>
-<th>Năng lực phải chủ động bù đắp</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. UET – AI hoặc Khoa học dữ liệu</td>
-<td>Công nghệ và nền tảng kỹ thuật chuyên sâu</td>
-<td>Toán, lập trình, thuật toán, dữ liệu, AI; khả năng chuyển sang nhiều
-ngành ứng dụng</td>
-<td>Kinh doanh, tài chính, giao tiếp, xây dựng mạng lưới và hiểu bài
-toán thị trường</td>
-</tr>
-<tr>
-<td>2. NEU – MIS hoặc AI EP16</td>
-<td>Công nghệ đặt trong bối cảnh kinh tế và doanh nghiệp</td>
-<td>Kết nối công nghệ với vận hành, quản trị, dữ liệu và bài toán kinh
-doanh</td>
-<td>Với MIS: phải học thêm kỹ thuật; với AI: phải củng cố chiều sâu khoa
-học máy tính và kỹ nghệ phần mềm</td>
-</tr>
-<tr>
-<td>3. NEU – Fintech và Ngân hàng số EP09 bằng tiếng Anh</td>
-<td>Tài chính–ngân hàng là ngành đào tạo; Fintech và ngân hàng số là
-hướng chuyên sâu</td>
-<td>Kiến thức tài chính, môi trường tiếng Anh, dữ liệu và hệ sinh thái
-doanh nghiệp của NEU</td>
-<td>Lập trình, kiến trúc hệ thống, AI, bảo mật và năng lực xây dựng sản
-phẩm công nghệ thực tế</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="lựa-chọn-1--uet-trí-tuệ-nhân-tạo-hoặc-khoa-học-dữ-liệu" class="level1">
-<h1>Lựa chọn 1 – UET: Trí tuệ nhân tạo hoặc Khoa học dữ liệu</h1>
-<section id="bản-chất-con-đường" class="level2">
-<h2>Bản chất con đường</h2>
-<p>Đây là lựa chọn ưu tiên xây dựng nền móng công nghệ. Sinh viên được
-đào tạo trong môi trường kỹ thuật, nơi toán học, lập trình, thuật toán,
-mô hình dữ liệu, nghiên cứu và làm dự án là các hoạt động trung tâm.</p>
-<p>Trí tuệ nhân tạo phù hợp hơn với người muốn đi sâu vào học máy, học
-sâu, xử lý ngôn ngữ tự nhiên, thị giác máy tính, hệ thống thông minh
-hoặc nghiên cứu và triển khai mô hình AI.</p>
-<p>Khoa học dữ liệu rộng hơn theo hướng thu thập, xử lý, phân tích, mô
-hình hóa và sử dụng dữ liệu để hỗ trợ ra quyết định. Con đường này có
-thể mở sang công nghệ, tài chính, thương mại điện tử, vận hành,
-marketing, y tế hoặc các lĩnh vực khác nếu sinh viên chủ động học thêm
-kiến thức miền.</p>
-</section>
-<section id="điều-kiện-để-phát-huy-tốt" class="level2">
-<h2>Điều kiện để phát huy tốt</h2>
-<p>Ứng viên cần chấp nhận rằng học công nghệ không dừng ở việc hoàn
-thành bài giảng trên lớp. Công nghệ thay đổi nhanh nên năng lực quan
-trọng nhất là khả năng tự học liên tục.</p>
-<p>Những cam kết cần có:</p>
-<ul>
-<li>Không ngại toán, tư duy logic và các bài tập khó cần nhiều thời
-gian.</li>
-<li>Duy trì thói quen tự đọc tài liệu tiếng Anh và học công nghệ
-mới.</li>
-<li>Viết mã thường xuyên; không chỉ xem video hoặc học lý thuyết.</li>
-<li>Sẵn sàng thử sai, sửa lỗi và làm lại nhiều lần.</li>
-<li>Có ít nhất một sản phẩm hoặc dự án thực tế trong mỗi năm học; ưu
-tiên sản phẩm có người dùng thật thay vì chỉ làm để nộp bài.</li>
-<li>Tìm nhóm học tập, phòng thí nghiệm, cuộc thi hoặc cộng đồng kỹ thuật
-phù hợp.</li>
-<li>Chủ động tìm trải nghiệm thực tế sớm thông qua thực tập, dự án của
-trường, dự án phi lợi nhuận hoặc tự phát triển sản phẩm cá nhân. Không
-đợi đến năm cuối mới tiếp xúc với bài toán và người dùng thật.</li>
-<li>Rèn có chủ đích những kỹ năng sinh viên công nghệ thường yếu như
-giao tiếp, thuyết trình, viết tài liệu, làm việc nhóm và giải thích vấn
-đề kỹ thuật cho người không chuyên. Đây có thể trở thành lợi thế khác
-biệt khi ra trường.</li>
-</ul>
-</section>
-<section id="môi-trường-và-yếu-tố-ứng-viên-nữ" class="level2">
-<h2>Môi trường và yếu tố ứng viên nữ</h2>
-<p>Báo cáo sinh viên tốt nghiệp UET năm 2024 ghi nhận 125 nữ trong tổng
-số 1.398 sinh viên tốt nghiệp toàn trường, khoảng 8,9%. Đây chỉ là chỉ
-báo của toàn trường ở nhóm tốt nghiệp năm 2024, không phải tỷ lệ riêng
-của AI hoặc Khoa học dữ liệu hiện nay. Tuy vậy, nó cho thấy UET là môi
-trường lệch nam đáng kể.</p>
-<p>Ứng viên nên cân nhắc trải nghiệm thực tế khi là thành viên của nhóm
-thiểu số giới trong lớp kỹ thuật: số bạn nữ có thể ít hơn, phong cách
-hoạt động sinh viên thiên về chuyên môn và nhóm bạn gần có thể chủ yếu
-là nam. Đây không phải bất lợi về năng lực nghề nghiệp, nhưng có thể ảnh
-hưởng cảm giác hòa nhập nếu ứng viên cần một cộng đồng bạn nữ lớn hoặc
-môi trường xã hội đa dạng.</p>
-<p>Ở chiều tích cực, trong các lớp kỹ thuật có ít nữ, nữ sinh thường dễ
-được thầy cô và bạn bè chú ý, khuyến khích và tin tưởng giao các vai trò
-như lớp trưởng, cán bộ lớp, công tác Đoàn – Hội hoặc điều phối nhóm. Đây
-là quan sát thực tế thường gặp ở một số trường kỹ thuật, không phải
-chính sách hay điều chắc chắn tại mọi lớp của UET. Nếu chủ động đón
-nhận, những vai trò này có thể giúp ứng viên rèn sớm năng lực lãnh đạo,
-tổ chức, giao tiếp và tạo mạng lưới — chính là các năng lực giúp một
-sinh viên công nghệ tạo khác biệt khi tốt nghiệp.</p>
-<p>Nếu ứng viên thực sự yêu thích công nghệ, tỷ lệ giới tính không nên
-là lý do loại bỏ UET. Khi đó, nên chủ động xây dựng thêm mạng lưới bên
-ngoài lớp học thông qua các câu lạc bộ, cộng đồng nữ trong công nghệ,
-hoạt động chung của ĐHQGHN và thực tập doanh nghiệp.</p>
-</section>
-<section id="lộ-trình-bốn-năm-đề-xuất" class="level2">
-<h2>Lộ trình bốn năm đề xuất</h2>
-<p>Nguyên tắc xuyên suốt: <strong>mỗi năm phải có ít nhất một đầu ra
-thực tế</strong> — sản phẩm cá nhân, dự án nhóm, đề tài của trường hoặc
-đóng góp cho một tổ chức phi lợi nhuận. Từ năm 3, nên có trải nghiệm làm
-việc part-time hoặc thực tập. Nếu là thực tập không lương, chỉ nên lựa
-chọn khi có thời hạn rõ ràng, người hướng dẫn, công việc chuyên môn cụ
-thể và giá trị học hỏi xứng đáng.</p>
-<p>Song song với chương trình chính khóa, ứng viên nên tìm và hoàn thành
-ít nhất một chương trình quốc tế có cấu trúc về một lĩnh vực chuyên sâu
-AI hoặc Khoa học dữ liệu. Chương trình có thể là chương trình liên kết
-của trường hoặc chương trình độc lập, trực tuyến từ một đại học/tổ chức
-quốc tế uy tín. Mục tiêu là tiếp cận chuẩn kiến thức quốc tế, tài liệu
-tiếng Anh và một cộng đồng học tập rộng hơn; chứng chỉ chỉ là kết quả
-phụ.</p>
-<section id="năm-1--xây-nền-móng" class="level3">
-<h3>Năm 1 – Xây nền móng</h3>
-<ul>
-<li>Học chắc lập trình cơ bản, cấu trúc dữ liệu và tư duy giải quyết vấn
-đề.</li>
-<li>Ưu tiên Python; đồng thời hiểu một ngôn ngữ nền tảng như C/C++ hoặc
-Java tùy chương trình.</li>
-<li>Học nghiêm túc giải tích, đại số tuyến tính, xác suất và thống
-kê.</li>
-<li>Sử dụng thành thạo Git, GitHub, Linux dòng lệnh và SQL cơ bản.</li>
-<li>Hoàn thành một dự án nhỏ có thể trình diễn, chẳng hạn phân tích dữ
-liệu công khai hoặc ứng dụng phần mềm đơn giản.</li>
-<li>Đưa dự án lên GitHub, viết hướng dẫn sử dụng và mời một nhóm người
-dùng nhỏ trải nghiệm, kể cả khi đó chỉ là bạn bè, câu lạc bộ hoặc một tổ
-chức phi lợi nhuận.</li>
-<li>Đạt khả năng đọc tài liệu kỹ thuật tiếng Anh mà không phụ thuộc hoàn
-toàn vào bản dịch.</li>
-<li>Tham gia một hoạt động giúp rèn thuyết trình hoặc tổ chức, chẳng hạn
-trình bày dự án, sinh hoạt câu lạc bộ hoặc hỗ trợ công tác lớp.</li>
-</ul>
-</section>
-<section id="năm-2--tạo-năng-lực-kỹ-thuật-có-cấu-trúc" class="level3">
-<h3>Năm 2 – Tạo năng lực kỹ thuật có cấu trúc</h3>
-<ul>
-<li>Học sâu hơn về thuật toán, cơ sở dữ liệu, xác suất thống kê và học
-máy cơ bản.</li>
-<li>Xây dựng 2–3 dự án có dữ liệu thật; viết README giải thích bài toán,
-phương pháp, kết quả và hạn chế.</li>
-<li>Tham gia nhóm nghiên cứu, dự án của giảng viên, dự án phi lợi nhuận,
-câu lạc bộ học thuật hoặc cuộc thi dữ liệu/lập trình; cố gắng nhận một
-phần việc có đầu ra cụ thể.</li>
-<li>Học cách kiểm thử, quản lý phiên bản và phối hợp làm việc nhóm.</li>
-<li>Bắt đầu khám phá một miền ứng dụng: tài chính, thương mại điện tử,
-sản phẩm số, y tế hoặc ngôn ngữ.</li>
-<li>Khảo sát và lựa chọn một chương trình quốc tế trực tuyến hoặc liên
-kết về AI/Khoa học dữ liệu phù hợp với hướng quan tâm; kiểm tra đề
-cương, yêu cầu đầu vào, bài tập thực hành và uy tín đơn vị đào tạo trước
-khi đăng ký.</li>
-<li>Tập thuyết trình dự án bằng cả tiếng Việt và tiếng Anh; học cách
-giải thích mô hình, kết quả và giới hạn cho người không chuyên.</li>
-</ul>
-</section>
-<section id="năm-3--chọn-hướng-chuyên-sâu-và-tiếp-xúc-doanh-nghiệp" class="level3">
-<h3>Năm 3 – Chọn hướng chuyên sâu và tiếp xúc doanh nghiệp</h3>
-<ul>
-<li>Nếu theo AI: lựa chọn một hướng như NLP, thị giác máy tính, hệ gợi
-ý, mô hình sinh hoặc MLOps.</li>
-<li>Nếu theo Khoa học dữ liệu: lựa chọn phân tích dữ liệu, kỹ thuật dữ
-liệu, học máy ứng dụng hoặc dữ liệu kinh doanh.</li>
-<li>Học thêm cloud, API, Docker, triển khai mô hình và theo dõi chất
-lượng hệ thống.</li>
-<li>Bắt đầu làm part-time hoặc thực tập kỹ thuật; có thể cân nhắc thực
-tập không lương trong thời gian giới hạn nếu có người hướng dẫn và công
-việc thực chất.</li>
-<li>Nếu chưa tìm được vị trí phù hợp, tiếp tục tham gia đề tài của
-trường, dự án phi lợi nhuận hoặc tự phát triển một sản phẩm có người
-dùng thật để không bị đứt quãng trải nghiệm thực hành.</li>
-<li>Học kiến thức miền đủ sâu để hiểu bài toán, không chỉ tối ưu chỉ số
-mô hình.</li>
-<li>Hoàn thành hoặc đi sâu vào chương trình quốc tế đã lựa chọn; chuyển
-nội dung học thành một dự án độc lập thay vì chỉ lấy chứng chỉ.</li>
-<li>Chủ động nhận vai trò trình bày, điều phối nhóm hoặc trao đổi với
-người dùng/đối tác để rèn giao tiếp chuyên nghiệp.</li>
-</ul>
-</section>
-<section id="năm-4--chuyển-năng-lực-thành-hồ-sơ-nghề-nghiệp" class="level3">
-<h3>Năm 4 – Chuyển năng lực thành hồ sơ nghề nghiệp</h3>
-<ul>
-<li>Chọn khóa luận hoặc đồ án giải quyết một vấn đề đủ rõ và có thể
-trình diễn.</li>
-<li>Có 2–3 dự án tốt thay vì nhiều dự án sao chép hướng dẫn.</li>
-<li>Chuẩn bị phỏng vấn về thuật toán, SQL, xác suất, thiết kế hệ thống
-và kiến thức chuyên sâu tương ứng.</li>
-<li>Thực tập dài hạn hoặc làm việc bán thời gian đúng định hướng nếu
-không ảnh hưởng việc tốt nghiệp.</li>
-<li>Ít nhất một sản phẩm trong portfolio cần có bằng chứng sử dụng thực
-tế: người dùng, phản hồi, số liệu vận hành hoặc đóng góp cho một tổ chức
-cụ thể.</li>
-<li>Có thể trình bày đồ án và portfolio rõ ràng trong 5–10 phút cho cả
-người kỹ thuật lẫn người quản lý/kinh doanh.</li>
-<li>Xác định vai trò đầu vào phù hợp: Data Analyst, Data Engineer, Data
-Scientist, Machine Learning Engineer, AI Engineer hoặc Software Engineer
-thiên về dữ liệu.</li>
-</ul>
-</section>
-</section>
-<section id="nguy-cơ-thất-bại-cần-tránh" class="level2">
-<h2>Nguy cơ thất bại cần tránh</h2>
-<ul>
-<li>Chọn AI chỉ vì đang là xu hướng nhưng không thích toán và lập
-trình.</li>
-<li>Chỉ dùng công cụ AI có sẵn mà không hiểu dữ liệu, thuật toán và cách
-đánh giá.</li>
-<li>Học nhưng không thực hành: không có project riêng, project nhóm hoặc
-sản phẩm cụ thể có thể trình diễn.</li>
-<li>Bỏ cuộc khi gặp các môn nền tảng toán học khó, thay vì chia nhỏ nội
-dung, ôn lại kiến thức phổ thông và tìm sự hỗ trợ từ giảng viên hoặc
-nhóm học.</li>
-<li>Không tự học thêm và không thường xuyên ôn lại giải tích, đại số
-tuyến tính, xác suất, thống kê, thuật toán và lập trình — những kiến
-thức cần được tích lũy theo nhiều vòng, không thể chỉ học một lần để
-thi.</li>
-<li>Học nhiều khóa trực tuyến nhưng không hoàn thành hoặc không chuyển
-kiến thức thành dự án.</li>
-<li>Quá tập trung kỹ thuật mà không học cách giao tiếp, viết báo cáo và
-hiểu nhu cầu người dùng.</li>
-<li>Đợi đến năm cuối mới tìm thực tập hoặc xây hồ sơ GitHub.</li>
-</ul>
-</section>
-</section>
-<section id="lựa-chọn-2--neu-hệ-thống-thông-tin-quản-lý-hoặc-trí-tuệ-nhân-tạo-ep16" class="level1">
-<h1>Lựa chọn 2 – NEU: Hệ thống thông tin quản lý hoặc Trí tuệ nhân tạo
-EP16</h1>
-<section id="bản-chất-con-đường-1" class="level2">
-<h2>Bản chất con đường</h2>
-<p>Lựa chọn này tận dụng môi trường kinh tế và doanh nghiệp của NEU
-nhưng vẫn duy trì một trục phát triển công nghệ. Hai nhánh có sự khác
-biệt lớn và không nên xem là hai tên gọi gần như nhau.</p>
-<section id="nhánh-hệ-thống-thông-tin-quản-lý--mis" class="level3">
-<h3>Nhánh Hệ thống thông tin quản lý – MIS</h3>
-<p>MIS là ngành giao giữa công nghệ, quản trị và vận hành doanh nghiệp.
-Mục tiêu không nhất thiết đào tạo người xây thuật toán AI chuyên sâu, mà
-đào tạo người hiểu cách doanh nghiệp vận hành, cách hệ thống thông tin
-hỗ trợ quản lý và cách chuyển nhu cầu nghiệp vụ thành giải pháp số.</p>
-<p>Các hướng nghề nghiệp tự nhiên gồm Business Analyst, Data/BI Analyst,
-tư vấn ERP, quản trị dự án công nghệ, Product Owner/Product Manager, tư
-vấn chuyển đổi số và quản trị hệ thống thông tin.</p>
-<p>Tuy nhiên, cần phân biệt <strong>hướng phát triển nghề
-nghiệp</strong> với <strong>vị trí đầu vào ngay sau tốt nghiệp</strong>.
-Trong thực tế phổ biến của các công ty và dự án IT tại Việt Nam, Product
-Owner, Product Manager và Project Manager thường đòi hỏi kinh nghiệm đã
-tham gia phát triển hoặc vận hành sản phẩm. Nhiều người được phát triển
-nội bộ từ Software Engineer, QA/Tester, Automation QA, Business Analyst,
-Data Analyst, chuyên viên nghiệp vụ hoặc một vị trí triển khai hệ thống.
-Business Analyst có vị trí junior/fresher, nhưng số lượng thường hạn chế
-và mức cạnh tranh cao; bằng MIS và kiến thức lý thuyết riêng lẻ chưa đủ
-bảo đảm có thể làm tốt công việc.</p>
-<p>Các lộ trình chuyển đổi thường gặp có thể là Engineer lên
-Project/Product Manager; Manual/Automation QA hoặc chuyên viên nghiệp vụ
-lên Product Owner; Tester, Engineer hoặc chuyên viên triển khai lên
-Business Analyst. Đây là quan sát thực tế thị trường, không phải con
-đường bắt buộc và cũng không đúng với mọi doanh nghiệp. Điểm chung là
-người được giao vai trò PO/PM/BA thường đã chứng minh được một năng lực
-chuyên môn, hiểu quy trình tạo sản phẩm và có kinh nghiệm làm việc với
-đội giao hàng.</p>
-<p>Vì vậy, sinh viên MIS không nên xây kế hoạch dựa trên giả định “tốt
-nghiệp sẽ làm ngay PO/PM/BA”. Các vị trí đầu vào thực tế hơn có thể gồm
-Junior Data/BI Analyst, Junior ERP/Implementation Consultant, QA/Tester,
-vận hành hệ thống, hỗ trợ sản phẩm, phân tích nghiệp vụ cấp đầu vào hoặc
-Software/Data Engineer nếu đã tự bồi dưỡng đủ nền tảng kỹ thuật. Chủ
-động học thêm lập trình, kiểm thử, dữ liệu, cloud và kỹ nghệ phần mềm sẽ
-mở rộng cửa vào thị trường ở vị trí chuyên môn; từ nền móng đó, ứng viên
-có thể phát triển đáng tin cậy hơn lên BA, PO hoặc PM sau này.</p>
-</section>
-<section id="nhánh-trí-tuệ-nhân-tạo-ep16" class="level3">
-<h3>Nhánh Trí tuệ nhân tạo EP16</h3>
-<p>EP16 thuộc Khoa Khoa học dữ liệu và Trí tuệ nhân tạo – Trường Công
-nghệ của NEU, mã ngành AI 7480107, mã tuyển sinh EP16, giảng dạy 100%
-bằng tiếng Anh. Chương trình hướng tới ứng dụng AI vào các bài toán kinh
-tế và kinh doanh.</p>
-<p>So với MIS, EP16 đòi hỏi toán và lập trình cao hơn. So với UET, lợi
-thế khác biệt là bối cảnh kinh tế, doanh nghiệp và môi trường NEU; sinh
-viên vẫn cần chủ động củng cố nền tảng khoa học máy tính và kỹ nghệ phần
-mềm nếu muốn cạnh tranh ở các vị trí kỹ thuật AI chuyên sâu.</p>
-</section>
-</section>
-<section id="điều-kiện-để-phát-huy-tốt-1" class="level2">
-<h2>Điều kiện để phát huy tốt</h2>
-<p>Lựa chọn này chỉ phát huy hết giá trị khi ứng viên đồng thời khai
-thác môi trường kinh tế của NEU và tự xây được một năng lực công nghệ có
-thể kiểm chứng. Những cam kết cần có:</p>
-<ul>
-<li>Xác định rõ nhánh phát triển: MIS thiên về hệ thống, dữ liệu và
-nghiệp vụ; EP16 thiên về AI ứng dụng và đòi hỏi nền tảng toán–lập trình
-cao hơn. Không chọn chỉ vì tên ngành hoặc xu hướng thị trường.</li>
-<li>Tận dụng môi trường năng động, tích cực của NEU để học domain
-business, tham gia hoạt động chuyên môn, tiếp xúc doanh nghiệp, phát
-triển tối đa kỹ năng mềm và mở rộng mạng lưới kết nối chuyên môn từ sớm;
-mỗi hoạt động phải tạo ra kỹ năng, dự án hoặc sự hợp tác có giá trị thực
-chất.</li>
-<li>Tự học bài bản ít nhất một ngôn ngữ lập trình nền tảng, ưu tiên
-Python, cùng SQL, Git, API, kiểm thử, dữ liệu và cloud; với EP16 cần học
-chắc thêm cấu trúc dữ liệu, thuật toán, đại số tuyến tính, xác suất và
-thống kê.</li>
-<li>Có ít nhất một sản phẩm hoặc dự án thực tế mỗi năm. Dự án nên giải
-quyết bài toán doanh nghiệp, có dữ liệu/người dùng thật hoặc được thực
-hiện cùng giảng viên, câu lạc bộ, tổ chức phi lợi nhuận hay doanh
-nghiệp.</li>
-<li>Chủ động tìm thực tập, công việc part-time hoặc dự án triển khai từ
-năm 2–3; không xây kế hoạch nghề nghiệp dựa trên giả định sẽ vào thẳng
-PO/PM/BA mà chưa có một năng lực đầu vào cụ thể.</li>
-<li>Sử dụng thành thạo AI assistants và coding agents để học, nghiên cứu
-và xây sản phẩm, nhưng phải tự đọc, debug, kiểm thử và giải thích được
-đầu ra.</li>
-<li>Rèn giao tiếp, thuyết trình, viết tài liệu, làm việc nhóm và khả
-năng chuyển đổi giữa ngôn ngữ kỹ thuật với ngôn ngữ kinh doanh. Đây là
-năng lực cốt lõi của người làm ở vùng giao technology–business.</li>
-<li>Với EP16, phải sử dụng được tiếng Anh trong học tập và công việc
-chuyên môn; với MIS, vẫn cần tiếng Anh đủ tốt để đọc tài liệu công nghệ
-và làm việc trong môi trường doanh nghiệp.</li>
-<li>Duy trì kỷ luật trước môi trường nhiều hoạt động: chọn ít hoạt động
-nhưng tham gia đủ sâu, không để câu lạc bộ và sự kiện làm suy giảm nền
-tảng chuyên môn.</li>
-<li>Ngoại ngữ thứ hai và chương trình quốc tế là lợi thế bổ sung khi
-tiếng Anh, chuyên môn và dự án cốt lõi đã được bảo đảm.</li>
-</ul>
-</section>
-<section id="môi-trường-học-tập" class="level2">
-<h2>Môi trường học tập</h2>
-<p>NEU có quy mô sinh viên lớn và hệ sinh thái câu lạc bộ, nghề nghiệp,
-khởi nghiệp, sự kiện và kết nối doanh nghiệp phong phú. Career Week 2025
-của trường có hơn 50 doanh nghiệp và gần 20.000 lượt sinh viên tham gia
-theo báo cáo chính thức của NEU.</p>
-<p>Môi trường này thuận lợi cho việc rèn giao tiếp, thuyết trình, tổ
-chức, kết nối và hiểu doanh nghiệp từ sớm. Đối với ứng viên nữ muốn có
-mạng lưới bạn bè đa dạng và không gian hoạt động rộng hơn, đây có thể là
-điểm phù hợp đáng kể. Tuy nhiên, chưa có số liệu chính thức cập nhật về
-tỷ lệ nữ riêng của MIS và EP16, nên không nên suy diễn tỷ lệ giới tính
-của toàn NEU cho từng lớp chuyên ngành.</p>
-</section>
-<section id="lộ-trình-chung-năm-đầu" class="level2">
-<h2>Lộ trình chung năm đầu</h2>
-<ul>
-<li>Học chắc kinh tế học, quản trị và tư duy dữ liệu thay vì coi môn đại
-cương là môn phụ.</li>
-<li>Tự học lại <strong>một ngôn ngữ lập trình nền tảng theo cách bài
-bản</strong>, ưu tiên Python: cú pháp, cấu trúc dữ liệu, hàm, lập trình
-hướng đối tượng, xử lý lỗi, kiểm thử và giải bài tập. Đây là điều bắt
-buộc dù công cụ AI có thể sinh mã rất nhanh.</li>
-<li>Học Python theo nguyên tắc có thể tự viết, chạy, debug và giải thích
-mã mà không phụ thuộc vào AI; sau đó học SQL, Git và kỹ năng làm việc
-với dữ liệu ngay từ học kỳ đầu.</li>
-<li>Sử dụng thành thạo các trợ lý và tác nhân AI theo đúng nhu cầu: công
-cụ hội thoại để giải thích và phản biện bài học; <a href="https://docs.anthropic.com/en/docs/claude-code/getting-started">Claude
-Code</a> hoặc <a href="https://help.openai.com/en/articles/11369540-using-codex-with-chatgpt">Codex</a>
-để đọc codebase, xây tính năng, chạy kiểm thử và hoàn thiện sản phẩm; <a href="https://www.anthropic.com/product/claude-cowork">Claude Cowork</a>
-cho nghiên cứu, tổng hợp tài liệu, xử lý tệp và công việc tri thức nhiều
-bước.</li>
-<li>Tiếp xúc sâu với AI bằng cách dùng công cụ để tự xây một sản phẩm
-nhỏ, đồng thời kiểm tra từng đầu ra, đọc phần mã được tạo, ghi lại quyết
-định thiết kế và tự chịu trách nhiệm về kết quả. Không đưa dữ liệu cá
-nhân/bí mật lên công cụ và tuân thủ quy định liêm chính học thuật của
-nhà trường.</li>
-<li>Tham gia một câu lạc bộ học thuật/nghề nghiệp và một hoạt động xã
-hội vừa sức; tránh tham gia quá nhiều nhưng không tạo kết quả.</li>
-<li>Rèn tiếng Anh học thuật và tiếng Anh công việc.</li>
-<li>Thực hiện dự án nhỏ gắn với bài toán doanh nghiệp, chẳng hạn
-dashboard bán hàng, phân tích hành vi khách hàng hoặc tự động hóa một
-quy trình.</li>
-</ul>
-</section>
-<section id="lộ-trình-riêng-cho-mis" class="level2">
-<h2>Lộ trình riêng cho MIS</h2>
-<section id="năm-2" class="level3">
-<h3>Năm 2</h3>
-<ul>
-<li>Học chắc cơ sở dữ liệu, phân tích thiết kế hệ thống và quy trình
-nghiệp vụ.</li>
-<li>Thành thạo SQL, Excel nâng cao và Power BI; biết Python ở mức xử lý
-dữ liệu và tự động hóa.</li>
-<li>Với từng học phần công nghệ trên lớp, chủ động học sâu thêm từ giáo
-trình, tài liệu chính thức và dự án thực hành; không dừng ở mức đủ điểm
-thi. Đặc biệt củng cố cấu trúc dữ liệu, lập trình hướng đối tượng, cơ sở
-dữ liệu, API, kiểm thử và nguyên lý hệ điều hành/mạng máy tính ở mức cần
-thiết.</li>
-<li>Tìm hiểu nền tảng cloud computing và các loại cloud service; thực
-hành triển khai một ứng dụng hoặc pipeline dữ liệu nhỏ trên dịch vụ
-cloud, đồng thời hiểu chi phí, bảo mật, phân quyền và giám sát cơ
-bản.</li>
-<li>Học cách phỏng vấn người dùng, viết yêu cầu, mô hình hóa quy trình
-và trình bày giải pháp.</li>
-<li>Tham gia cuộc thi tình huống kinh doanh, MIS Talent hoặc dự án
-chuyển đổi số.</li>
-<li>Nếu có đủ thời gian và điều kiện, bắt đầu học nghiêm túc một ngoại
-ngữ thứ hai ngoài tiếng Anh theo mục tiêu sử dụng được trong công việc.
-Không nên học dàn trải hoặc chỉ để có thêm một dòng chứng chỉ; tiếng Anh
-và năng lực chuyên môn vẫn là ưu tiên trước.</li>
-<li>Tiếp tục dùng AI agents để tăng tốc dự án, nhưng mỗi sản phẩm phải
-thể hiện phần kiến thức ứng viên thực sự hiểu và có thể bảo vệ khi phỏng
-vấn.</li>
-</ul>
-</section>
-<section id="năm-3" class="level3">
-<h3>Năm 3</h3>
-<ul>
-<li>Chọn một hướng: Business Analysis, BI/Data Analytics, ERP, Product
-hoặc quản trị dự án công nghệ.</li>
-<li>Tìm thực tập tại ngân hàng, công ty tư vấn, doanh nghiệp phần mềm
-hoặc bộ phận chuyển đổi số.</li>
-<li>Cân nhắc bắt đầu một chương trình liên kết hoặc chương trình độc lập
-quốc tế, thời lượng khoảng 1–1,5 năm và có hỗ trợ học trực tuyến, về
-công nghệ, dữ liệu hoặc quản lý. Chỉ chọn chương trình có đề cương rõ,
-đơn vị đào tạo uy tín, bài tập/dự án thực tế và lịch học không làm ảnh
-hưởng trải nghiệm thực tập.</li>
-<li>Nếu theo BA/Product: xây portfolio gồm quy trình, user story,
-wireframe, đặc tả và phân tích hiệu quả.</li>
-<li>Nếu theo BI/Data: xây portfolio SQL, mô hình dữ liệu và dashboard có
-câu chuyện kinh doanh rõ ràng.</li>
-<li>Nếu muốn tạo thêm cửa vào vị trí Engineer, xây ít nhất một sản phẩm
-end-to-end có backend/API, cơ sở dữ liệu, kiểm thử, triển khai cloud và
-người dùng thử; sử dụng AI agent để hỗ trợ nhưng phải tự hiểu kiến trúc
-và xử lý được lỗi.</li>
-</ul>
-</section>
-<section id="năm-4" class="level3">
-<h3>Năm 4</h3>
-<ul>
-<li>Thực hiện đồ án gắn với một tổ chức hoặc bài toán vận hành
-thật.</li>
-<li>Có trải nghiệm làm việc với cả người dùng nghiệp vụ và đội kỹ
-thuật.</li>
-<li>Bổ sung kiến thức Agile/Scrum, quản lý dự án, bảo mật và quản trị dữ
-liệu.</li>
-<li>Ứng tuyển theo vai trò cụ thể, không dùng mô tả chung chung “làm
-công nghệ”.</li>
-</ul>
-</section>
-</section>
-<section id="lộ-trình-riêng-cho-ai-ep16" class="level2">
-<h2>Lộ trình riêng cho AI EP16</h2>
-<section id="năm-2-1" class="level3">
-<h3>Năm 2</h3>
-<ul>
-<li>Học chắc Python, cấu trúc dữ liệu, thuật toán, đại số tuyến tính,
-xác suất và thống kê.</li>
-<li>Xây dự án học máy từ đầu đến cuối, gồm làm sạch dữ liệu, huấn luyện,
-đánh giá và giải thích kết quả.</li>
-<li>Tận dụng chương trình tiếng Anh để đọc giáo trình, viết báo cáo và
-thuyết trình kỹ thuật bằng tiếng Anh.</li>
-<li>Học sâu thêm các học phần nền tảng khoa học máy tính, cơ sở dữ liệu,
-API và kiểm thử để tránh chỉ biết xây mô hình trong notebook.</li>
-<li>Sử dụng Claude Code/Codex để đọc codebase, kiểm thử và triển khai dự
-án; dùng công cụ AI cho nghiên cứu và tổng hợp, nhưng phải tự giải thích
-được thuật toán, mã nguồn, dữ liệu và kết quả đánh giá.</li>
-<li>Tìm hiểu cloud computing và triển khai một mô hình hoặc dịch vụ AI
-nhỏ trên cloud; hiểu tối thiểu về chi phí, bảo mật dữ liệu, phân quyền
-và giám sát.</li>
-<li>Nếu có năng lực và thời gian, có thể học ngoại ngữ thứ hai theo mục
-tiêu nghề nghiệp cụ thể; không để ảnh hưởng tiếng Anh, toán, lập trình
-và dự án cốt lõi.</li>
-</ul>
-</section>
-<section id="năm-3-1" class="level3">
-<h3>Năm 3</h3>
-<ul>
-<li>Chọn hướng chuyên sâu AI và học thêm kỹ nghệ phần mềm, API, cloud,
-Docker và MLOps.</li>
-<li>Ưu tiên bài toán có dữ liệu kinh tế/tài chính/kinh doanh để tạo lợi
-thế khác biệt của NEU.</li>
-<li>Tìm thực tập tại đội dữ liệu, AI, phân tích rủi ro, thương mại điện
-tử hoặc công nghệ tài chính.</li>
-<li>Cân nhắc chương trình quốc tế trực tuyến hoặc liên kết thời lượng
-khoảng 1–1,5 năm về AI, Khoa học dữ liệu, cloud hoặc quản lý công nghệ;
-ưu tiên chương trình có dự án capstone và cơ chế phản hồi từ giảng
-viên/chuyên gia.</li>
-<li>Hoàn thiện một sản phẩm AI end-to-end có API/giao diện, triển khai
-cloud, kiểm thử và người dùng thử; AI agent được sử dụng như cộng sự
-phát triển, không phải tác giả thay cho ứng viên.</li>
-</ul>
-</section>
-<section id="năm-4-1" class="level3">
-<h3>Năm 4</h3>
-<ul>
-<li>Có sản phẩm AI chạy được, không chỉ notebook hoặc báo cáo môn
-học.</li>
-<li>Chuẩn bị phỏng vấn kỹ thuật tương tự sinh viên các trường công nghệ
-chuyên sâu.</li>
-<li>Thể hiện lợi thế kép: hiểu mô hình AI và diễn giải được giá trị kinh
-doanh.</li>
-</ul>
-</section>
-</section>
-<section id="nguy-cơ-thất-bại-cần-tránh-1" class="level2">
-<h2>Nguy cơ thất bại cần tránh</h2>
-<ul>
-<li>Với MIS: học quá nhiều quản trị nhưng không thành thạo SQL, dữ liệu
-hoặc một hệ thống cụ thể.</li>
-<li>Với EP16: dựa hoàn toàn vào tên ngành AI nhưng nền tảng lập trình và
-toán không đủ chắc.</li>
-<li>Xem PO/PM/BA là vị trí mặc định ngay sau tốt nghiệp, trong khi chưa
-có một năng lực chuyên môn đủ mạnh và chưa từng tham gia quá trình giao
-sản phẩm thực tế.</li>
-<li>Phụ thuộc vào AI agent đến mức có thể tạo sản phẩm nhưng không thể
-tự đọc mã, debug, giải thích thiết kế hoặc bảo vệ kết quả khi phỏng
-vấn.</li>
-<li>Đăng ký chương trình quốc tế chỉ vì chứng chỉ hoặc danh tiếng, không
-kiểm tra đề cương, tính thực hành, khả năng công nhận và tải học tập
-thực tế.</li>
-<li>Tham gia nhiều câu lạc bộ chỉ để có chức danh, không tạo kỹ năng
-hoặc quan hệ nghề nghiệp thực chất.</li>
-<li>Đánh đồng “học tại Trường Công nghệ của NEU” với độ sâu kỹ thuật tự
-động tương đương một trường chuyên công nghệ; chiều sâu cuối cùng phụ
-thuộc đáng kể vào tự học và dự án.</li>
-</ul>
-</section>
-</section>
-<section id="lựa-chọn-3--neu-công-nghệ-tài-chính-và-ngân-hàng-số-ep09-bằng-tiếng-anh" class="level1">
-<h1>Lựa chọn 3 – NEU: Công nghệ tài chính và Ngân hàng số EP09 bằng
-tiếng Anh</h1>
-<section id="bản-chất-con-đường-2" class="level2">
-<h2>Bản chất con đường</h2>
-<p>Đây là chương trình <strong>Công nghệ tài chính và Ngân hàng
-số</strong>, mã tuyển sinh <strong>EP09</strong>, do Viện Ngân hàng –
-Tài chính quản lý và giảng dạy hoàn toàn bằng tiếng Anh. EP09 thuộc
-ngành <strong>Tài chính – Ngân hàng, mã ngành 7340201</strong>; theo
-giải thích chính thức của Viện, sinh viên tốt nghiệp được cấp bằng Cử
-nhân Tài chính – Ngân hàng. “Công nghệ tài chính và Ngân hàng số” là tên
-chương trình/hướng đào tạo, không phải tên ngành ghi trên bằng như ngành
-Công nghệ tài chính tiếng Việt mã 7340205.</p>
-<p>EP09 đã tuyển sinh từ trước, không phải chương trình mở mới năm 2026.
-Điểm chuẩn năm 2025 là <strong>26,29</strong>; với điểm quy đổi 27,74,
-ứng viên cao hơn mốc tham khảo này 1,45 điểm nếu cách quy đổi và điều
-kiện xét tuyển năm 2026 tương thích. Đây vẫn không phải cam kết trúng
-tuyển.</p>
-<p>Con đường này nên được hiểu là xây dựng nền tảng tài chính – ngân
-hàng trong môi trường học thuật bằng tiếng Anh, sau đó sử dụng dữ liệu
-và công nghệ để đổi mới sản phẩm, quy trình, thanh toán, đầu tư, quản
-trị rủi ro và dịch vụ tài chính. Lợi thế chính là sự kết hợp giữa kiến
-thức ngành tài chính, tiếng Anh chuyên môn và hệ sinh thái doanh nghiệp
-của NEU; chiều sâu kỹ thuật vẫn phải được ứng viên chủ động bồi
-dưỡng.</p>
-</section>
-<section id="điều-kiện-để-phát-huy-tốt-2" class="level2">
-<h2>Điều kiện để phát huy tốt</h2>
-<p>Lựa chọn EP09 phát huy tốt nhất khi ứng viên xây được năng lực liên
-ngành thật, thay vì chỉ có kiến thức rời rạc về tài chính, tiếng Anh và
-công nghệ. Những cam kết cần có:</p>
-<ul>
-<li>Có hứng thú thật với tài chính, ngân hàng, đầu tư, thanh toán hoặc
-mô hình kinh doanh số.</li>
-<li>Có khả năng học chuyên môn bằng tiếng Anh hoặc sẵn sàng đầu tư
-nghiêm túc để đạt năng lực đó. Mục tiêu là đọc giáo trình, nghe giảng,
-viết báo cáo và thuyết trình chuyên môn bằng tiếng Anh, không chỉ đạt
-chứng chỉ đầu vào.</li>
-<li>Chủ động sử dụng lợi thế của NEU — một môi trường năng động và tích
-cực — để học hỏi từ giảng viên, cựu sinh viên và người làm nghề; đồng
-thời phát triển tối đa kỹ năng mềm và mở rộng mạng lưới kết nối chuyên
-môn với ngân hàng, công ty chứng khoán và doanh nghiệp Fintech.</li>
-<li>Hiểu rõ bằng tốt nghiệp thuộc ngành Tài chính – Ngân hàng 7340201;
-không chọn chương trình chỉ vì tên Fintech rồi kỳ vọng được đào tạo như
-một Software Engineer hoặc AI Engineer thuần túy.</li>
-<li>Chủ động tự học thêm để nắm chắc nền tảng công nghệ cốt lõi, bù đắp
-phần kiến thức mà nhiều sinh viên khối kinh tế thường coi nhẹ; chẳng hạn
-Python, SQL, phân tích dữ liệu, API, cloud và kiến thức an toàn thông
-tin. Không học các công cụ một cách rời rạc mà cần kết nối chúng trong
-những sản phẩm hoặc hệ thống hoàn chỉnh.</li>
-<li>Theo dõi quy định, đạo đức, quản trị rủi ro và bảo vệ dữ liệu trong
-tài chính.</li>
-<li>Sử dụng công cụ AI và coding agents để học, nghiên cứu và xây sản
-phẩm, nhưng vẫn phải tự hiểu kiến thức tài chính, mã nguồn, dữ liệu và
-rủi ro của giải pháp.</li>
-<li>Có ít nhất một dự án thực tế mỗi năm kết hợp tài chính với dữ
-liệu/công nghệ; ưu tiên sản phẩm có người dùng thử, phản hồi hoặc chỉ số
-vận hành cụ thể.</li>
-<li>Chủ động thực tập hoặc làm part-time từ năm 2–3 tại ngân hàng, chứng
-khoán, bảo hiểm, tư vấn, trung gian thanh toán hoặc doanh nghiệp công
-nghệ có bài toán tài chính.</li>
-<li>Rèn khả năng trình bày một giải pháp theo cả ba góc nhìn: nghiệp vụ
-tài chính, kiến trúc/công nghệ và hiệu quả–rủi ro kinh doanh.</li>
-<li>Tận dụng môi trường khởi nghiệp của NEU để thử nghiệm ý tưởng nhỏ,
-nhưng chỉ tăng vốn khi đã kiểm chứng được nhu cầu và năng lực đội
-ngũ.</li>
-</ul>
-</section>
-<section id="lộ-trình-bốn-năm-đề-xuất-1" class="level2">
-<h2>Lộ trình bốn năm đề xuất</h2>
-<section id="năm-1--nền-tảng-kép" class="level3">
-<h3>Năm 1 – Nền tảng kép</h3>
-<ul>
-<li>Học chắc kinh tế vi mô, vĩ mô, nguyên lý tài chính – tiền tệ, kế
-toán và thống kê.</li>
-<li>Xây vốn từ vựng chuyên ngành và thói quen đọc giáo trình, báo cáo,
-tin tài chính bằng tiếng Anh; luyện viết và thuyết trình ngắn bằng tiếng
-Anh ngay từ học kỳ đầu.</li>
-<li>Tự học Python một cách bài bản, sau đó học SQL, Git và Excel nâng
-cao; phải có thể tự viết, debug và giải thích chương trình thay vì phụ
-thuộc hoàn toàn vào AI.</li>
-<li>Làm quen Claude Code/Codex cho lập trình và xây sản phẩm; dùng AI
-hội thoại/Cowork cho nghiên cứu và tổng hợp tài liệu, đồng thời kiểm
-chứng nguồn và bảo vệ dữ liệu cá nhân.</li>
-<li>Theo dõi tin tức tài chính bằng cả tiếng Việt và tiếng Anh; học cách
-đọc báo cáo tài chính cơ bản.</li>
-<li>Tham gia một câu lạc bộ tài chính hoặc công nghệ có hoạt động thực
-chất.</li>
-<li>Làm dự án nhỏ như phân tích dữ liệu giá, dashboard tài chính hoặc mô
-phỏng khoản vay; trình bày kết quả bằng cả tiếng Việt và tiếng Anh.</li>
-</ul>
-</section>
-<section id="năm-2--hiểu-sản-phẩm-và-hệ-thống-tài-chính" class="level3">
-<h3>Năm 2 – Hiểu sản phẩm và hệ thống tài chính</h3>
-<ul>
-<li>Học sâu hơn về ngân hàng, đầu tư, thanh toán, rủi ro và thị trường
-tài chính.</li>
-<li>Tìm hiểu kiến trúc cơ bản của ví điện tử, cổng thanh toán, eKYC,
-chấm điểm tín dụng và chống gian lận.</li>
-<li>Học Power BI hoặc công cụ trực quan hóa; xây 2 dự án sử dụng dữ liệu
-tài chính.</li>
-<li>Học thêm API, cơ sở dữ liệu, kiểm thử và cloud computing; triển khai
-một ứng dụng hoặc pipeline dữ liệu tài chính nhỏ trên cloud.</li>
-<li>Đọc tài liệu kỹ thuật và tài chính bằng tiếng Anh, viết báo cáo phân
-tích có trích nguồn và thuyết trình cho nhóm người nghe không
-chuyên.</li>
-<li>Tham gia cuộc thi phân tích đầu tư, đổi mới sáng tạo hoặc xây dựng
-sản phẩm số.</li>
-<li>Nếu có năng lực và thời gian, có thể học thêm ngoại ngữ thứ hai theo
-mục tiêu nghề nghiệp cụ thể, nhưng không để ảnh hưởng tiếng Anh, tài
-chính và nền tảng công nghệ.</li>
-</ul>
-</section>
-<section id="năm-3--chọn-một-ngách-nghề-nghiệp" class="level3">
-<h3>Năm 3 – Chọn một ngách nghề nghiệp</h3>
-<ul>
-<li>Các ngách có thể lựa chọn: phân tích dữ liệu tài chính, sản phẩm
-Fintech, rủi ro số, thanh toán, RegTech, WealthTech hoặc phân tích đầu
-tư định lượng.</li>
-<li>Tìm thực tập tại ngân hàng, công ty chứng khoán, bảo hiểm, trung
-gian thanh toán hoặc startup Fintech.</li>
-<li>Nếu muốn đi kỹ thuật: học thêm cấu trúc dữ liệu, API, cơ sở dữ liệu,
-cloud và bảo mật.</li>
-<li>Nếu muốn đi sản phẩm/kinh doanh: học nghiên cứu người dùng, product
-analytics, mô hình kinh doanh và quản trị sản phẩm.</li>
-<li>Cân nhắc chương trình trao đổi, chuyển tiếp hoặc một chương trình
-quốc tế trực tuyến ngắn hạn về Fintech, dữ liệu, cloud hay quản lý tài
-chính; chỉ chọn khi có đề cương rõ, dự án thực tế và phù hợp lịch thực
-tập.</li>
-<li>Xây một sản phẩm end-to-end có người dùng thử, chẳng hạn dashboard
-rủi ro, mô hình cảnh báo gian lận, công cụ phân tích đầu tư hoặc nguyên
-mẫu sản phẩm ngân hàng số.</li>
-</ul>
-</section>
-<section id="năm-4--chứng-minh-năng-lực-liên-ngành" class="level3">
-<h3>Năm 4 – Chứng minh năng lực liên ngành</h3>
-<ul>
-<li>Thực hiện đồ án giải quyết bài toán tài chính có dữ liệu và yếu tố
-công nghệ cụ thể.</li>
-<li>Có thể giải thích đồng thời ba phần: vấn đề tài chính, giải pháp
-công nghệ và hiệu quả/rủi ro kinh doanh.</li>
-<li>Có thể trình bày và bảo vệ đồ án bằng tiếng Anh; sử dụng đúng thuật
-ngữ nhưng vẫn diễn giải được cho người không chuyên.</li>
-<li>Chủ động tìm kiếm sự hướng dẫn từ người có kinh nghiệm trong lĩnh
-vực tài chính; xin phản hồi về hồ sơ, dự án và định hướng nghề
-nghiệp.</li>
-<li>Ứng tuyển theo vai trò cụ thể: Business/Data Analyst trong tài
-chính, Product Analyst, chuyên viên sản phẩm số, phân tích rủi ro, tư
-vấn chuyển đổi số tài chính hoặc vị trí kỹ thuật nếu đã tự bồi dưỡng đủ
-sâu.</li>
-</ul>
-</section>
-</section>
-<section id="nguy-cơ-thất-bại-cần-tránh-2" class="level2">
-<h2>Nguy cơ thất bại cần tránh</h2>
-<ul>
-<li>Chọn EP09 vì tên Fintech hấp dẫn nhưng không thích tài chính–ngân
-hàng, trong khi đây mới là ngành đào tạo và tên bằng tốt nghiệp.</li>
-<li>Học tài chính ở mức lý thuyết, không sử dụng dữ liệu hoặc công cụ
-thực tế.</li>
-<li>Học vài môn lập trình rồi tự nhận là kỹ sư công nghệ mà thiếu nền
-tảng hệ thống.</li>
-<li>Phụ thuộc vào AI để viết mã hoặc báo cáo nhưng không thể tự giải
-thích mô hình, giả định tài chính, nguồn dữ liệu và rủi ro.</li>
-<li>Chỉ tham gia hoạt động networking nhưng không có năng lực chuyên môn
-để tạo giá trị cho mạng lưới.</li>
-<li>Không tận dụng lợi thế học bằng tiếng Anh để tiếp cận giáo trình
-quốc tế, cơ hội trao đổi và môi trường làm việc toàn cầu.</li>
-</ul>
-</section>
-</section>
-<section id="các-năng-lực-chung-bắt-buộc-dù-chọn-ngành-nào" class="level1">
-<h1>Các năng lực chung bắt buộc dù chọn ngành nào</h1>
-<section id="1-tiếng-anh" class="level2">
-<h2>1. Tiếng Anh</h2>
-<p>Tiếng Anh là công cụ tiếp cận giáo trình, tài liệu, khóa học quốc tế
-và cơ hội nghề nghiệp. Mục tiêu không chỉ là chứng chỉ mà phải gồm đọc
-tài liệu, nghe bài giảng, viết báo cáo và trao đổi chuyên môn.</p>
-</section>
-<section id="2-năng-lực-sử-dụng-ai-có-trách-nhiệm" class="level2">
-<h2>2. Năng lực sử dụng AI có trách nhiệm</h2>
-<p>Ứng viên cần biết dùng công cụ AI để học, lập trình, phân tích và tạo
-nội dung, nhưng đồng thời phải biết kiểm chứng, bảo vệ dữ liệu, trích
-dẫn và tự chịu trách nhiệm về kết quả. Không để AI thay thế hoàn toàn
-quá trình suy nghĩ.</p>
-</section>
-<section id="3-portfolio" class="level2">
-<h2>3. Portfolio</h2>
-<p>Mỗi năm cần có ít nhất một sản phẩm có thể trình bày. Portfolio tốt
-phải trả lời được: bài toán là gì, dữ liệu đến từ đâu, ứng viên đã làm
-phần nào, kết quả ra sao, hạn chế gì và nếu làm lại sẽ cải thiện thế
-nào.</p>
-</section>
-<section id="4-trải-nghiệm-thực-tế" class="level2">
-<h2>4. Trải nghiệm thực tế</h2>
-<p>Không đợi đến năm cuối mới thực tập. Có thể bắt đầu bằng dự án câu
-lạc bộ, nghiên cứu sinh viên, cuộc thi, công việc bán thời gian hoặc hỗ
-trợ một tổ chức nhỏ giải quyết vấn đề thật.</p>
-</section>
-<section id="5-mạng-lưới-nghề-nghiệp" class="level2">
-<h2>5. Mạng lưới nghề nghiệp</h2>
-<p>Networking không phải là thu thập danh thiếp. Đó là quá trình học
-hỏi, hợp tác và tạo uy tín thông qua công việc. Mỗi năm nên chủ động duy
-trì những kết nối học hỏi và hợp tác có chiều sâu với một số giảng viên,
-anh chị khóa trên và người làm nghề.</p>
-</section>
-<section id="6-sức-khỏe-và-khả-năng-duy-trì-nhịp-học" class="level2">
-<h2>6. Sức khỏe và khả năng duy trì nhịp học</h2>
-<p>Thành công cần nhiều năm tích lũy. Lịch học, hoạt động ngoại khóa, dự
-án và thực tập phải được sắp xếp để không dẫn tới kiệt sức hoặc đánh đổi
-toàn bộ sức khỏe.</p>
-</section>
-</section>
-<section id="gợi-ý-nguồn-tự-học-quốc-tế" class="level1">
-<h1>Gợi ý nguồn tự học quốc tế</h1>
-<p>Các khóa học chỉ có giá trị khi được kết hợp với thực hành và dự án.
-Không cần học tất cả; nên chọn đúng khóa để bù phần còn thiếu của chương
-trình chính.</p>
-<ul>
-<li><a href="https://cs50.harvard.edu/x/">CS50x 2026 – Harvard</a>: nền
-tảng khoa học máy tính, lập trình, thuật toán, cấu trúc dữ liệu, Python
-và SQL; phù hợp cho sinh viên NEU cần bồi dưỡng nền tảng công nghệ.</li>
-<li><a href="https://www.coursera.org/specializations/machine-learning-introduction">Machine
-Learning Specialization – DeepLearning.AI và Stanford Online</a>: nền
-tảng học máy ứng dụng bằng Python.</li>
-<li><a href="https://course.fast.ai/">Practical Deep Learning for Coders
-– fast.ai</a>: phù hợp sau khi đã có kinh nghiệm lập trình, tập trung
-xây dựng và triển khai mô hình thực tế.</li>
-<li><a href="https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-learning-path-directory">Microsoft
-Learn – Power BI</a>: lộ trình từ người mới đến phân tích, mô hình hóa
-và trực quan hóa dữ liệu; phù hợp MIS, Fintech và Khoa học dữ liệu ứng
-dụng.</li>
-</ul>
-<p>Nguyên tắc lựa chọn khóa học:</p>
-<ol type="1">
-<li>Xác định một năng lực thiếu cụ thể.</li>
-<li>Chọn một khóa có bài tập thực hành và nguồn uy tín.</li>
-<li>Hoàn thành thay vì đăng ký nhiều khóa cùng lúc.</li>
-<li>Chuyển bài học thành dự án riêng, không sao chép nguyên bài
-mẫu.</li>
-<li>Ghi lại kết quả trên GitHub, portfolio hoặc báo cáo dự án.</li>
-</ol>
-</section>
-<section id="tựu-chung-ba-con-đường" class="level1">
-<h1>Tựu chung ba con đường</h1>
-<p>Ba lựa chọn không chỉ khác nhau ở tên ngành. Chúng khác nhau chủ yếu
-ở <strong>loại vốn nghề nghiệp mà sinh viên tích lũy trước</strong>:</p>
-<ul>
-<li>UET tích lũy chiều sâu khoa học và kỹ thuật trước.</li>
-<li>NEU MIS/AI EP16 tích lũy khả năng kết nối công nghệ với dữ liệu và
-bài toán doanh nghiệp.</li>
-<li>NEU EP09 tích lũy nền tảng Tài chính–Ngân hàng bằng tiếng Anh và
-mạng lưới ngành trước.</li>
-</ul>
-<p>Các con đường có thể hội tụ sau vài năm làm việc. Sinh viên UET có
-thể chuyển sang sản phẩm, quản lý hoặc Fintech nếu học thêm domain; sinh
-viên NEU có thể đi sâu vào kỹ thuật nếu đầu tư nghiêm túc cho lập trình,
-toán, hệ thống và dự án. Khác biệt lớn nhất không nằm ở giới hạn cuối
-cùng, mà ở điểm xuất phát, môi trường rèn luyện và phần kiến thức phải
-tự bù đắp.</p>
-<table>
-<thead>
-<tr>
-<th>Con đường</th>
-<th>Nền tảng cần tập trung</th>
-<th>Lợi thế cần khai thác</th>
-<th>Phần phải chủ động bù đắp</th>
-<th>Cửa vào nghề nghiệp thực tế</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UET – AI/Khoa học dữ liệu</td>
-<td>Toán, khoa học máy tính, lập trình, dữ liệu và nghiên cứu</td>
-<td>Môi trường công nghệ chuyên sâu; phòng thí nghiệm, giảng viên và dự
-án kỹ thuật</td>
-<td>Giao tiếp, thuyết trình, hiểu sản phẩm/kinh doanh và mạng lưới ngoài
-kỹ thuật</td>
-<td>Software/Data/AI Engineer, Data Analyst, nghiên cứu hoặc các vị trí
-kỹ thuật liên quan</td>
-</tr>
-<tr>
-<td>NEU – MIS/AI EP16</td>
-<td>MIS: hệ thống, dữ liệu và nghiệp vụ; EP16: AI ứng dụng trong bối
-cảnh kinh tế</td>
-<td>Môi trường năng động, nhiều hoạt động và tiếp xúc doanh nghiệp; khả
-năng hiểu bài toán kinh doanh</td>
-<td>Chiều sâu lập trình, cấu trúc dữ liệu, kỹ nghệ phần mềm, cloud và dự
-án triển khai thực tế</td>
-<td>MIS: Data/BI, ERP, QA, triển khai hệ thống, Junior BA; EP16:
-AI/Data/Software nếu nền tảng kỹ thuật đủ mạnh</td>
-</tr>
-<tr>
-<td>NEU – EP09 Fintech và Ngân hàng số</td>
-<td>Tài chính–Ngân hàng, dữ liệu, sản phẩm tài chính số và tiếng Anh
-chuyên môn</td>
-<td>Domain tài chính của NEU, môi trường tiếng Anh và mạng lưới ngân
-hàng/doanh nghiệp</td>
-<td>Lập trình, kiến trúc hệ thống, bảo mật, cloud, AI và năng lực xây
-sản phẩm</td>
-<td>Phân tích dữ liệu/rủi ro tài chính, sản phẩm số, tư vấn chuyển đổi
-số, vận hành/triển khai Fintech hoặc kỹ thuật nếu tự học đủ sâu</td>
-</tr>
-</tbody>
-</table>
-<section id="con-đường-uet--chuyên-môn-sâu-làm-nền" class="level2">
-<h2>Con đường UET – Chuyên môn sâu làm nền</h2>
-<p>Đây là con đường phù hợp khi ứng viên sẵn sàng xây nền khoa học cơ
-bản vững chắc và chịu được quá trình học toán, thuật toán, lập trình
-tương đối nặng. Việc học phải gắn liên tục với sản phẩm thật, dự án của
-trường, phòng thí nghiệm, nghiên cứu sinh viên, tổ chức phi lợi nhuận
-hoặc thực tập sớm. Nếu chỉ học để thi mà không xây dựng và triển khai
-sản phẩm, lợi thế của một trường công nghệ sẽ không tự động chuyển thành
-năng lực nghề nghiệp.</p>
-<p>Cơ hội nghề nghiệp của con đường này tương đối rộng vì nền tảng công
-nghệ có thể được ứng dụng trong nhiều domain. Tuy nhiên, để tạo khác
-biệt giữa nhiều sinh viên kỹ thuật giỏi, ứng viên cần chủ động nâng cấp
-giao tiếp, thuyết trình, viết tài liệu, hiểu người dùng và khả năng
-trình bày giá trị kinh doanh của giải pháp. Công thức phù hợp là:
-<strong>nền tảng sâu + thực hành thật + khả năng truyền đạt rõ
-ràng</strong>.</p>
-</section>
-<section id="con-đường-neu-misai-ep16--kết-nối-công-nghệ-với-doanh-nghiệp" class="level2">
-<h2>Con đường NEU MIS/AI EP16 – Kết nối công nghệ với doanh nghiệp</h2>
-<p>Lợi thế so sánh của NEU là môi trường kinh tế–kinh doanh, hoạt động
-sinh viên, mạng lưới doanh nghiệp và cơ hội tiếp xúc nhiều domain từ
-sớm. Ứng viên cần chủ động tham gia câu lạc bộ, cuộc thi, dự án và thực
-tập; học hỏi, hợp tác cùng giảng viên, anh chị khóa trên và người làm
-nghề để phát triển kỹ năng mềm cũng như mạng lưới kết nối chuyên môn.
-Network chỉ có giá trị bền vững khi đi cùng năng lực tạo ra kết quả.</p>
-<p>Với MIS, ứng viên phải tránh kỳ vọng rằng bằng cấp sẽ đưa thẳng vào
-PO/PM/BA. Cần xây một năng lực đầu vào có thể kiểm chứng như dữ liệu/BI,
-ERP, QA, triển khai hệ thống, phân tích nghiệp vụ hoặc kỹ thuật phần
-mềm. Với EP16, cần dùng lợi thế tiếng Anh và domain kinh tế của NEU
-nhưng vẫn phải tự củng cố chuẩn kỹ thuật đủ để cạnh tranh với sinh viên
-từ các trường chuyên công nghệ.</p>
-<p>Con đường này thành công khi ứng viên trở thành người <strong>hiểu
-business nhưng không mơ hồ về technology</strong>: có thể nói chuyện với
-người dùng và lãnh đạo, đồng thời hiểu dữ liệu, hệ thống và quá trình
-phát triển sản phẩm đủ sâu để làm việc thực chất với đội kỹ thuật.</p>
-<p>Lộ trình nghề nghiệp có thể bắt đầu tương tự một Junior Engineer hoặc
-một vị trí kỹ thuật cấp đầu vào như Data/BI Analyst, QA/Automation,
-ERP/Implementation Consultant hay vận hành hệ thống. Trong những năm
-đầu, mục tiêu là trực tiếp tham gia xây dựng, kiểm thử, triển khai và
-vận hành sản phẩm để hiểu một hệ thống thực sự được tạo ra như thế nào.
-Nếu muốn vào vị trí Junior Engineer, ứng viên vẫn phải đáp ứng chuẩn
-tuyển dụng về lập trình, cấu trúc dữ liệu, cơ sở dữ liệu, API, Git, kiểm
-thử và khả năng giải quyết vấn đề; bằng MIS hoặc lợi thế business không
-thể thay thế các yêu cầu này.</p>
-<p>Sau khoảng <strong>3–5 năm tích lũy kinh nghiệm kỹ thuật và giao sản
-phẩm</strong>, ứng viên có thể khai thác lợi thế về business domain,
-giao tiếp và tư duy hệ thống để phát triển sang Senior/Lead theo hướng
-kỹ thuật hoặc chuyển dần sang Business Analyst, Solution Consultant,
-Product Owner, Product Manager hay Project Manager. Quá trình chuyển đổi
-không diễn ra tự động theo số năm: ứng viên phải chứng minh được hiểu
-người dùng, hiểu hiệu quả kinh doanh, có khả năng điều phối và vẫn giữ
-đủ độ sâu công nghệ để đưa ra quyết định đáng tin cậy.</p>
-</section>
-<section id="con-đường-neu-ep09--tài-chính-bằng-tiếng-anh-công-nghệ-là-năng-lực-mở-rộng" class="level2">
-<h2>Con đường NEU EP09 – Tài chính bằng tiếng Anh, công nghệ là năng lực
-mở rộng</h2>
-<p>EP09 phù hợp khi ứng viên có hứng thú thật với Tài chính–Ngân hàng và
-muốn làm việc trong bối cảnh số hóa, dữ liệu và hội nhập quốc tế. Cần
-tận dụng tối đa việc học bằng tiếng Anh, lợi thế domain tài chính của
-NEU, cơ hội trao đổi và mạng lưới ngân hàng, chứng khoán, bảo hiểm,
-trung gian thanh toán và doanh nghiệp Fintech.</p>
-<p>Đồng thời, ứng viên phải tự học công nghệ đủ sâu để không chỉ là
-người “biết thuật ngữ Fintech”. Python, SQL, dữ liệu, API, cloud, bảo
-mật và AI cần được chuyển thành dự án có thể trình diễn. Lợi thế dài hạn
-nằm ở khả năng kết nối ba lớp: <strong>hiểu nghiệp vụ tài chính, giao
-tiếp chuyên môn bằng tiếng Anh và xây/đánh giá được giải pháp công
-nghệ</strong>.</p>
-<p>Lộ trình nghề nghiệp ban đầu có thể bắt đầu từ một vị trí chuyên môn
-cấp junior như Financial/Data/Risk Analyst, Product Analyst, vận hành
-sản phẩm ngân hàng số, tư vấn triển khai giải pháp tài chính, QA/Tester
-trong dự án Fintech hoặc hỗ trợ chuyển đổi số tại ngân hàng và tổ chức
-tài chính. Mục tiêu trong những năm đầu là nắm chắc một nghiệp vụ, trực
-tiếp làm việc với dữ liệu/quy trình và hiểu cách sản phẩm tài chính số
-được thiết kế, triển khai, kiểm soát rủi ro và vận hành. Nếu muốn bắt
-đầu như Junior Software/Data Engineer, ứng viên phải tự bồi dưỡng và đáp
-ứng đầy đủ chuẩn kỹ thuật của vị trí; tên chương trình Fintech không tự
-động tạo ra năng lực engineer.</p>
-<p>Sau khoảng <strong>3–5 năm tích lũy kinh nghiệm chuyên môn và giao
-sản phẩm</strong>, ứng viên có thể khai thác lợi thế kết hợp giữa domain
-Tài chính–Ngân hàng, tiếng Anh và công nghệ để phát triển theo các hướng
-như phân tích rủi ro/gian lận chuyên sâu, Data/Analytics trong tài
-chính, Solution Consultant, chuyên gia chuyển đổi số, Product
-Owner/Product Manager cho sản phẩm tài chính số hoặc quản lý dự án
-Fintech. Nếu khởi đầu ở nhánh engineer và duy trì chiều sâu kỹ thuật,
-ứng viên cũng có thể phát triển lên Senior/Lead trong hệ thống tài
-chính. Việc chuyển vai trò không diễn ra tự động sau 3–5 năm: ứng viên
-phải chứng minh được kết quả chuyên môn, hiểu quy định và rủi ro tài
-chính, có năng lực làm việc liên phòng ban và chuyển kiến thức thành giá
-trị cho khách hàng/doanh nghiệp.</p>
-</section>
-<section id="khởi-nghiệp--một-lợi-thế-có-thể-chủ-động-khai-thác-tại-neu" class="level2">
-<h2>Khởi nghiệp – một lợi thế có thể chủ động khai thác tại NEU</h2>
-<p>Môi trường NEU tạo điều kiện thuận lợi hơn để hình thành tư duy khởi
-nghiệp: sinh viên được tiếp xúc sớm với kinh tế, tài chính, marketing,
-vận hành, mô hình kinh doanh, câu lạc bộ, doanh nghiệp và các bạn học có
-cùng tinh thần kinh doanh. Trường có Trung tâm Đổi mới sáng tạo và Hướng
-nghiệp, các chương trình đào tạo ngắn hạn về đổi mới sáng tạo, cùng
-Olympic Khởi nghiệp đã được tổ chức qua nhiều mùa. Năm 2025, Câu lạc bộ
-Tư vấn Khởi nghiệp của Trung tâm ra mắt với mentor từ doanh nghiệp và
-giảng viên NEU. Đây là hạ tầng có thể tận dụng cho cả sinh viên MIS/AI
-EP16 và EP09; nó không bảo đảm dự án sẽ thành công nếu đội ngũ không có
-sản phẩm và không kiểm chứng được nhu cầu thị trường.</p>
-<p>Khởi nghiệp nên được xem như một <strong>lộ trình học bằng thực
-tế</strong>, không phải yêu cầu phải lập công ty hoặc phải tiêu hết số
-vốn gia đình cung cấp. Ứng viên có thể thực hiện nhiều thử nghiệm nhỏ
-trong các năm đầu, tích lũy kinh nghiệm về khách hàng, bán hàng, sản
-phẩm, tài chính và làm việc nhóm; đến năm 3 hoặc năm 4 mới đặt mục tiêu
-xây một dự án nghiêm túc hơn.</p>
-<section id="lộ-trình-khởi-nghiệp-gợi-ý" class="level3">
-<h3>Lộ trình khởi nghiệp gợi ý</h3>
-<ul>
-<li><strong>Năm 1:</strong> tham gia câu lạc bộ/cuộc thi, quan sát vấn
-đề, phỏng vấn người dùng và làm các thử nghiệm gần như không cần vốn.
-Mục tiêu là học cách phát hiện nhu cầu thật, không phải lập công ty
-ngay.</li>
-<li><strong>Năm 2:</strong> xây 1–2 MVP nhỏ cùng bạn học thuộc các thế
-mạnh khác nhau như công nghệ, tài chính, marketing và vận hành. Tìm
-những người dùng đầu tiên, đo mức sử dụng và thử khả năng khách hàng sẵn
-sàng trả tiền.</li>
-<li><strong>Năm 3:</strong> chọn một dự án có tín hiệu tốt để chạy
-pilot, tìm mentor và phân công vai trò rõ ràng. Có thể đặt mục tiêu có
-khách hàng trả tiền, doanh thu đầu tiên hoặc một tổ chức đồng ý dùng thử
-trước khi tăng vốn.</li>
-<li><strong>Năm 4:</strong> quyết định dựa trên dữ liệu: tiếp tục mở
-rộng, thay đổi mô hình, chuyển giao dự án hoặc dừng. Chỉ nên thành lập
-và đầu tư quy mô lớn hơn khi đã hiểu khách hàng, có đội ngũ cam kết, số
-liệu vận hành và kế hoạch tài chính cụ thể.</li>
-</ul>
-</section>
-<section id="cách-sử-dụng-vốn-gia-đình" class="level3">
-<h3>Cách sử dụng vốn gia đình</h3>
-<p>Khoản <strong>300–500 triệu đồng</strong> chỉ nên được xem là ví dụ
-về hạn mức thử nghiệm tối đa mà gia đình có thể cân nhắc, không phải mức
-vốn khuyến nghị và không phải mục tiêu phải giải ngân. Một cách thận
-trọng hơn là chia vốn thành các giai đoạn:</p>
-<ol type="1">
-<li><strong>10–30 triệu đồng:</strong> kiểm chứng vấn đề, làm nguyên
-mẫu/MVP và tiếp cận nhóm người dùng đầu tiên.</li>
-<li><strong>50–100 triệu đồng:</strong> chỉ giải ngân tiếp khi đã có
-người dùng thật, phản hồi đáng tin cậy hoặc pilot có khả năng tạo doanh
-thu.</li>
-<li><strong>Phần vốn còn lại trong hạn mức 300–500 triệu đồng:</strong>
-chỉ xem xét khi dự án đạt các mốc đã thống nhất như khách hàng trả tiền,
-tỷ lệ sử dụng/quay lại, chi phí thu hút khách hàng hợp lý, đội ngũ ổn
-định và kế hoạch vận hành rõ ràng.</li>
-</ol>
-<p>Các con số trên chỉ là khung minh họa để quản trị rủi ro. Gia đình
-nên xác định trước số tiền có thể mất hoàn toàn mà không ảnh hưởng kế
-hoạch tài chính, giải ngân theo từng mốc, theo dõi thu–chi riêng và
-không dùng khoản vay cá nhân để ép dự án sinh viên phải tăng trưởng. Với
-dự án liên quan đến Fintech, thanh toán, đầu tư hoặc dữ liệu tài chính,
-cần tham vấn người có chuyên môn pháp lý, kế toán và bảo mật trước khi
-xử lý tiền hoặc dữ liệu thật của khách hàng.</p>
-<p>Lợi ích lớn nhất của một dự án khởi nghiệp thời sinh viên không nhất
-thiết là lợi nhuận. Ngay cả khi dự án dừng lại, ứng viên vẫn có thể thu
-được một portfolio mạnh, kinh nghiệm xây sản phẩm end-to-end, hiểu thị
-trường, khả năng lãnh đạo và một mạng lưới cộng sự. Tuy nhiên, dự án chỉ
-có giá trị học tập khi ứng viên trực tiếp làm việc, đo kết quả và rút
-kinh nghiệm; vốn gia đình không thể thay thế năng lực sáng lập hoặc nhu
-cầu thật của khách hàng.</p>
-</section>
-</section>
-<section id="ngoại-ngữ-và-network-lợi-thế-có-điều-kiện" class="level2">
-<h2>Ngoại ngữ và network: lợi thế có điều kiện</h2>
-<p>Tiếng Anh là năng lực ưu tiên vì gắn trực tiếp với tài liệu công
-nghệ, chương trình EP16/EP09 và thị trường lao động quốc tế. Ngoại ngữ
-thứ hai có thể tạo thêm lợi thế nếu gắn với một thị trường hoặc mục tiêu
-nghề nghiệp rõ ràng, nhưng chỉ nên bắt đầu khi ứng viên đã duy trì được
-tiếng Anh, chuyên môn và dự án cốt lõi. Học nhiều ngoại ngữ ở mức sơ cấp
-không có giá trị bằng sử dụng tốt một ngoại ngữ trong công việc.</p>
-<p>Tương tự, network không phải số lượng người quen hoặc chức danh câu
-lạc bộ. Network nghề nghiệp được hình thành từ uy tín, khả năng hợp tác
-và giá trị ứng viên tạo ra qua dự án, thực tập và hoạt động chuyên môn.
-NEU cung cấp nhiều cơ hội kết nối hơn, nhưng ứng viên phải chủ động biến
-cơ hội đó thành những kết nối chuyên môn có chiều sâu; UET có mạng lưới
-chuyên môn kỹ thuật mạnh, nhưng ứng viên cần chủ động mở rộng sang cộng
-đồng sản phẩm và doanh nghiệp.</p>
-</section>
-<section id="công-thức-chung-để-thành-công" class="level2">
-<h2>Công thức chung để thành công</h2>
-<p>Dù chọn con đường nào, hồ sơ tốt nghiệp nên chứng minh được sáu thành
-phần:</p>
-<ol type="1">
-<li><strong>Nền tảng:</strong> hiểu chắc kiến thức cốt lõi, không chỉ
-vượt qua kỳ thi.</li>
-<li><strong>Thực hành:</strong> có sản phẩm, dự án hoặc nghiên cứu với
-đầu ra cụ thể và tốt nhất là có người dùng thật.</li>
-<li><strong>Công cụ hiện đại:</strong> sử dụng AI agents, cloud và dữ
-liệu để tăng năng suất nhưng không phụ thuộc mù quáng.</li>
-<li><strong>Giao tiếp:</strong> trình bày, viết tài liệu và phối hợp
-được với cả người kỹ thuật lẫn người kinh doanh.</li>
-<li><strong>Trải nghiệm:</strong> thực tập, làm part-time hoặc tham gia
-dự án thật trước năm cuối.</li>
-<li><strong>Mạng lưới kết nối và uy tín:</strong> có người từng học tập,
-thực hiện dự án hoặc làm việc cùng sẵn sàng xác nhận năng lực, thái độ
-và kết quả của ứng viên.</li>
-</ol>
-<p>Không con đường nào bù được sự thụ động. Trường và ngành tạo ra môi
-trường cùng điểm xuất phát; ứng viên vẫn phải tự biến bốn năm đại học
-thành một chuỗi kết quả có thể kiểm chứng.</p>
-</section>
-</section>
-<section id="kết-luận" class="level1">
-<h1>Kết luận</h1>
-<p>Ba lựa chọn có thể được diễn giải như ba chiến lược:</p>
-<ul>
-<li><strong>UET AI/Khoa học dữ liệu:</strong> xây năng lực công nghệ sâu
-trước, sau đó mở rộng sang miền ứng dụng.</li>
-<li><strong>NEU MIS/AI EP16:</strong> phát triển ở vùng giao giữa công
-nghệ, dữ liệu và bài toán kinh tế – doanh nghiệp.</li>
-<li><strong>NEU Fintech và Ngân hàng số EP09:</strong> xây nền tảng Tài
-chính–Ngân hàng bằng tiếng Anh và mạng lưới ngành trước, đồng thời chủ
-động bồi dưỡng công nghệ để tạo năng lực liên ngành.</li>
-</ul>
-<p>Không có con đường nào tự động dẫn tới thành công. UET không thể thay
-thế việc chủ động học kinh doanh và giao tiếp; NEU không thể thay thế
-việc tự rèn chiều sâu công nghệ. Lựa chọn phù hợp nhất là con đường mà
-ứng viên hiểu rõ yêu cầu, chấp nhận đánh đổi và sẵn sàng thực hiện đều
-đặn lộ trình phát triển tương ứng trong ít nhất bốn năm.</p>
-</section>
-<section id="nguồn-thông-tin-chính-thức" class="level1">
-<h1>Nguồn thông tin chính thức</h1>
-<ol type="1">
-<li><a href="https://uet.vnu.edu.vn/vien-tri-tue-nhan-tao/">UET – Ngành
-Trí tuệ nhân tạo</a></li>
-<li><a href="https://uet.vnu.edu.vn/bao-cao-tinh-hinh-viec-lam-cua-cuu-sinh-vien-tot-nghiep-nam-2024/">UET
-– Báo cáo việc làm sinh viên tốt nghiệp năm 2024</a></li>
-<li><a href="https://courses.neu.edu.vn/curriculum/he-thong-thong-tin-quan-ly-k62-K62.7340405">NEU
-– Chương trình Hệ thống thông tin quản lý K68–2026</a></li>
-<li><a href="https://nct.neu.edu.vn/chuong-trinh-dao-tao/artificial-intelligence-EP16">NEU
-– Trí tuệ nhân tạo EP16</a></li>
-<li><a href="https://fda.neu.edu.vn/hoi-dap-ve-tuyen-sinh-2026/">NEU –
-Hỏi đáp tuyển sinh 2026 của Khoa Khoa học dữ liệu và Trí tuệ nhân
-tạo</a></li>
-<li><a href="https://courses.neu.edu.vn/curriculum/cong-nghe-tai-chinh-va-ngan-hang-so-k68ep09-1?year=K68+-+2026">NEU
-– Công nghệ tài chính và Ngân hàng số EP09, ngành Tài chính–Ngân hàng
-7340201</a></li>
-<li><a href="https://phongtonghop.neu.edu.vn/Resources/Docs/SubDomain/phongtonghop/Ba%20cong%20khai/2020/T12/10.12/3.2%20CT%C4%90T%20Co%CC%82ng%20nghe%CC%A3%CC%82%20ta%CC%80i%20chi%CC%81nh_BFT_2020.pdf">NEU
-– Chương trình đào tạo EP09, ngành Tài chính–Ngân hàng 7340201</a></li>
-<li><a href="https://nhtc.neu.edu.vn/thong-diep-tuyen-sinh-2026-tu-pgs-ts-hoang-xuan-que-vien-truong-vien-ngan-hang-tai-chinh/">Viện
-Ngân hàng – Tài chính NEU – Thông điệp tuyển sinh 2026</a></li>
-<li><a href="https://jobs.neu.edu.vn/posts/hoi-nghi-tong-ket-nhiem-vu-cong-tac-sinh-vien-nam-2025-tai-dai-hoc-kinh-te-quoc-dan-202511122200">NEU
-– Tổng kết công tác sinh viên năm 2025</a></li>
-<li><a href="https://jobs.neu.edu.vn/posts/le-phat-dong-cuoc-thi-olympic-khoi-nghiep-2025-202509241119">NEU
-– Olympic Khởi nghiệp 2025 và Câu lạc bộ Tư vấn Khởi nghiệp</a></li>
-</ol>
-<hr />
-<p><em>Dữ liệu tuyển sinh trong tài liệu được cập nhật đến ngày
-12/07/2026. Điểm chuẩn 2025 chỉ dùng để tham khảo tương quan, không phải
-dự báo hoặc cam kết trúng tuyển năm 2026.</em></p>
-</section>
-<script>
-(() => {
-  const normalize = (text) => (text || '').trim().toLowerCase();
+  <header>
+    <span class="eyebrow">BẢN SO SÁNH NGẮN GỌN · 12/07/2026</span>
+    <h1>Ba con đường đào tạo</h1>
+    <p>Không chọn thay ứng viên. Bảng này làm rõ bản chất, điều kiện phát triển, hành trình cần chủ động và cửa vào nghề nghiệp của từng lựa chọn.</p>
+  </header>
 
-  document.querySelectorAll('section.level1').forEach(section => {
-    const title = normalize(section.querySelector(':scope > h1')?.textContent);
-    if (title.includes('lựa chọn 1')) section.classList.add('path-uet');
-    if (title.includes('lựa chọn 2')) section.classList.add('path-neu');
-    if (title.includes('lựa chọn 3')) section.classList.add('path-fintech');
-  });
+  <main>
+    <div class="context">
+      <p>Ứng viên: nữ · Điểm quy đổi tham khảo: <strong>27,74</strong></p>
+      <div class="chips" aria-label="Ba định hướng">
+        <span class="chip">Technology first</span>
+        <span class="chip">Technology × Business</span>
+        <span class="chip">Finance × Technology</span>
+      </div>
+    </div>
 
-  document.querySelectorAll('table').forEach(table => {
-    const wrap = document.createElement('div');
-    wrap.className = 'table-wrap';
-    table.parentNode.insertBefore(wrap, table);
-    wrap.appendChild(table);
-  });
+    <div class="scroll-hint"><span>↔</span> Kéo ngang để xem đủ bốn tiêu chí; cột lộ trình luôn được ghim.</div>
 
-  document.querySelectorAll('section.level3').forEach(section => {
-    const heading = section.querySelector(':scope > h3');
-    if (!heading || !/^năm\s+[1-4]/i.test(heading.textContent.trim())) return;
-    const details = document.createElement('details');
-    details.className = 'timeline';
-    details.id = section.id;
-    const summary = document.createElement('summary');
-    summary.textContent = heading.textContent;
-    details.appendChild(summary);
-    [...section.children].slice(1).forEach(child => details.appendChild(child));
-    section.replaceWith(details);
-  });
+    <div class="table-shell" tabindex="0" role="region" aria-label="Bảng so sánh ba con đường đào tạo">
+      <table>
+        <colgroup>
+          <col class="route"><col class="essence"><col class="traits"><col class="journey"><col class="jobs">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Lộ trình</th>
+            <th>1. Bản chất con đường</th>
+            <th>2. Tố chất để phát triển tốt</th>
+            <th>3. Lưu ý hành trình học</th>
+            <th>4. Công việc sau khi ra trường</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="uet">
+            <th scope="row">
+              <span class="route-no">CON ĐƯỜNG 01</span>
+              <span class="route-name">UET<br>AI / Khoa học dữ liệu</span>
+              <span class="route-sub">Chuyên môn công nghệ sâu</span>
+              <span class="score">2025: AI 27,75 · DS 27,38</span>
+            </th>
+            <td>
+              <ul>
+                <li>Nền tảng: toán, khoa học máy tính, lập trình, dữ liệu.</li>
+                <li>AI: mô hình và hệ thống thông minh.</li>
+                <li>Data Science: phân tích, kỹ thuật dữ liệu, ứng dụng đa ngành.</li>
+                <li>Môi trường kỹ thuật; ít nữ; cơ hội nghề nghiệp rộng.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Chịu được toán và lập trình nặng.</li>
+                <li>Kiên trì; tự học; đọc tài liệu tiếng Anh.</li>
+                <li>Thích nghiên cứu, debug, thử sai.</li>
+                <li>Chủ động bù kỹ năng giao tiếp, thuyết trình.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Học chắc thuật toán, Python/C++/Java, SQL, Git, Linux, xác suất.</li>
+                <li><strong>Mỗi năm một sản phẩm/dự án thật.</strong> Ưu tiên có người dùng.</li>
+                <li>Tham gia lab, đề tài trường, dự án phi lợi nhuận.</li>
+                <li>Thực tập từ năm 2–3; part-time từ năm 3.</li>
+                <li>Một khóa quốc tế chuyên sâu AI/Data Science.</li>
+                <li>Rèn presentation, communication, viết tài liệu.</li>
+              </ul>
+            </td>
+            <td>
+              <span class="phase">Mới ra trường</span>
+              <ul>
+                <li>Junior Software/Data/AI Engineer.</li>
+                <li>Data Analyst, Data Engineer, nghiên cứu.</li>
+              </ul>
+              <span class="phase">Phát triển tiếp</span>
+              <ul>
+                <li>Senior/Lead kỹ thuật, nghiên cứu.</li>
+                <li>Product/Solution hoặc chuyên sâu theo domain.</li>
+              </ul>
+            </td>
+          </tr>
 
-  const firstPurpose = document.querySelector('#mục-đích-của-tài-liệu p');
-  if (firstPurpose) firstPurpose.classList.add('callout');
+          <tr class="neu">
+            <th scope="row">
+              <span class="route-no">CON ĐƯỜNG 02</span>
+              <span class="route-name">NEU<br>MIS / AI EP16</span>
+              <span class="route-sub">Công nghệ × Business</span>
+              <span class="score">2025: MIS 27,50 · EP16 25,44</span>
+            </th>
+            <td>
+              <ul>
+                <li>MIS: hệ thống, dữ liệu, quy trình doanh nghiệp.</li>
+                <li>EP16: AI ứng dụng; học bằng tiếng Anh; kỹ thuật cao hơn MIS.</li>
+                <li>Lợi thế: business domain, hoạt động sinh viên, tiếp xúc doanh nghiệp.</li>
+                <li>Đích đến: hiểu business, nắm chắc technology.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Chủ động; thích kết nối người dùng–business–kỹ thuật.</li>
+                <li>Kỷ luật trong môi trường nhiều hoạt động.</li>
+                <li>Sẵn sàng tự bù chiều sâu công nghệ.</li>
+                <li>Biết tận dụng NEU để phát triển kỹ năng mềm và network.</li>
+                <li>EP16: toán, lập trình, tiếng Anh tốt.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Học chắc Python, SQL, Git, API, kiểm thử, cloud.</li>
+                <li>Dùng AI agents; tự đọc, debug, giải thích đầu ra.</li>
+                <li><strong>Mỗi năm một sản phẩm/dự án thật.</strong></li>
+                <li>Thực tập/part-time từ năm 2–3.</li>
+                <li>Rèn communication, presentation, tài liệu business–technology.</li>
+                <li>Ngoại ngữ thứ hai sau khi vững tiếng Anh.</li>
+                <li>Cân nhắc khóa quốc tế 1–1,5 năm; thử khởi nghiệp nhỏ.</li>
+              </ul>
+            </td>
+            <td>
+              <span class="phase">Mới ra trường</span>
+              <ul>
+                <li>MIS: Data/BI, QA, ERP/Implementation, vận hành, Junior BA.</li>
+                <li>EP16: Junior AI/Data/Software Engineer nếu đủ chuẩn.</li>
+                <li>PO/PM/BA: cạnh tranh cao; không mặc định.</li>
+              </ul>
+              <span class="phase">Sau 3–5 năm</span>
+              <ul>
+                <li>Senior/Lead hoặc BA, Solution, PO/PM/Project Manager.</li>
+                <li>Lợi thế: kinh nghiệm kỹ thuật + business domain.</li>
+              </ul>
+            </td>
+          </tr>
 
-  const progress = document.getElementById('reading-progress');
-  const updateProgress = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-  };
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
+          <tr class="fin">
+            <th scope="row">
+              <span class="route-no">CON ĐƯỜNG 03</span>
+              <span class="route-name">NEU<br>Fintech &amp; Digital Banking EP09</span>
+              <span class="route-sub">Tài chính × Công nghệ</span>
+              <span class="score">2025: 26,29</span>
+            </th>
+            <td>
+              <ul>
+                <li>Học bằng tiếng Anh.</li>
+                <li>Ngành/bằng: Tài chính–Ngân hàng 7340201.</li>
+                <li>Fintech, Ngân hàng số: tên chương trình/hướng chuyên sâu.</li>
+                <li>Nền tài chính trước; công nghệ để mở rộng.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Thích tài chính, ngân hàng, đầu tư, thanh toán.</li>
+                <li>Học chuyên môn bằng tiếng Anh.</li>
+                <li>Tư duy định lượng; cẩn trọng với dữ liệu và rủi ro.</li>
+                <li>Chủ động bù công nghệ cốt lõi.</li>
+                <li>Tận dụng NEU: kỹ năng mềm, kinh doanh, network.</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>Học chắc tài chính, kế toán, thống kê.</li>
+                <li>Tự học Python, SQL, dữ liệu, API, cloud, bảo mật, AI.</li>
+                <li><strong>Mỗi năm một dự án tài chính–công nghệ.</strong></li>
+                <li>Thực tập/part-time từ năm 2–3.</li>
+                <li>Dùng AI agents; hiểu mã, dữ liệu, giả định, rủi ro.</li>
+                <li>Ngoại ngữ thứ hai/trao đổi sau khi vững tiếng Anh.</li>
+                <li>Khởi nghiệp: thử nhỏ; pilot năm 3; mở rộng theo dữ liệu.</li>
+              </ul>
+            </td>
+            <td>
+              <span class="phase">Mới ra trường</span>
+              <ul>
+                <li>Financial/Data/Risk Analyst, Product Analyst.</li>
+                <li>Vận hành ngân hàng số, QA, triển khai Fintech.</li>
+                <li>Junior Software/Data Engineer nếu đủ chuẩn.</li>
+              </ul>
+              <span class="phase">Sau 3–5 năm</span>
+              <ul>
+                <li>Risk/Fraud Analytics, Solution, chuyển đổi số.</li>
+                <li>PO/PM hoặc quản lý dự án Fintech.</li>
+                <li>Senior/Lead nếu theo nhánh engineer.</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  document.getElementById('theme-toggle')?.addEventListener('click', event => {
-    document.body.classList.toggle('dark-mode');
-    event.currentTarget.textContent = document.body.classList.contains('dark-mode')
-      ? 'Chế độ sáng' : 'Chế độ tối';
-  });
+    <div class="note">
+      <strong>Cách đọc bảng:</strong> điểm chuẩn 2025 chỉ là mốc tham khảo, không phải cam kết trúng tuyển 2026. Không có con đường nào tự động tạo thành công: trường cung cấp môi trường và điểm xuất phát; ứng viên phải tạo năng lực qua nền tảng, dự án, trải nghiệm, giao tiếp và uy tín nghề nghiệp.
+    </div>
+  </main>
 
-  document.getElementById('expand-all')?.addEventListener('click', event => {
-    const timelines = [...document.querySelectorAll('details.timeline')];
-    const shouldOpen = timelines.some(item => !item.open);
-    timelines.forEach(item => item.open = shouldOpen);
-    event.currentTarget.textContent = shouldOpen ? 'Thu gọn lộ trình' : 'Mở lộ trình';
-  });
-
-  document.getElementById('print-report')?.addEventListener('click', () => window.print());
-})();
-</script>
+  <footer>
+    Nguồn chi tiết và chương trình đào tạo chính thức được lưu trong bản báo cáo đầy đủ · Cập nhật 12/07/2026
+  </footer>
 </body>
 </html>
