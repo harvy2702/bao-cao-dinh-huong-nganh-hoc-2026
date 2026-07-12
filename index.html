@@ -10,13 +10,12 @@
       --bg: #eef3f8;
       --paper: #fff;
       --ink: #172033;
-      --muted: #5f6b7a;
       --line: #d9e2ec;
       --uet: #1769aa;
       --neu: #9e1b32;
       --fin: #087864;
       --navy: #123b67;
-      --shadow: 0 18px 45px rgba(25, 46, 78, .12);
+      --shadow: 0 10px 30px rgba(25, 46, 78, .10);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -30,62 +29,9 @@
       font-family: Inter, "Segoe UI", Arial, sans-serif;
       line-height: 1.55;
     }
-    header {
-      padding: 58px 24px 38px;
-      color: white;
-      text-align: center;
-      background: linear-gradient(135deg, #0e355d, #1769aa 48%, #7b2038);
-    }
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      padding: 6px 12px;
-      border: 1px solid rgba(255,255,255,.45);
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .15em;
-    }
-    h1 {
-      max-width: 900px;
-      margin: 0 auto 12px;
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-    header p { max-width: 860px; margin: 0 auto; color: rgba(255,255,255,.82); font-size: 17px; }
-    main { max-width: 1600px; margin: 0 auto; padding: 28px 18px 54px; }
-    .context {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 0 16px;
-    }
-    .context p { margin: 0; color: var(--muted); font-size: 14px; }
-    .chips { display: flex; flex-wrap: wrap; gap: 7px; }
-    .chip {
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: #33465b;
-      background: rgba(255,255,255,.8);
-      font-size: 12px;
-      font-weight: 750;
-    }
-    .scroll-hint {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 10px 0;
-      color: #526477;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .scroll-hint span { color: var(--uet); font-size: 19px; }
+    main { max-width: 1600px; margin: 0 auto; padding: 12px; }
     .table-shell {
-      max-height: calc(100vh - 110px);
+      max-height: calc(100vh - 24px);
       overflow: auto;
       border: 1px solid var(--line);
       border-radius: 18px;
@@ -140,26 +86,7 @@
     tr.neu th { background: linear-gradient(145deg, #76162b, var(--neu)); }
     tr.fin th { background: linear-gradient(145deg, #075b4d, var(--fin)); }
     tbody tr:hover td { background: #f7fafc; }
-    .route-no {
-      display: block;
-      margin-bottom: 10px;
-      color: rgba(255,255,255,.72);
-      font-size: 10px;
-      font-weight: 850;
-      letter-spacing: .14em;
-    }
     .route-name { display: block; font-size: 20px; line-height: 1.22; }
-    .route-sub { display: block; margin-top: 9px; color: rgba(255,255,255,.82); font-size: 12px; font-weight: 500; }
-    .score {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 5px 8px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 8px;
-      font-size: 11px;
-    }
-    h2 { margin: 0 0 10px; color: #173b61; font-size: 16px; }
-    p { margin: 0 0 9px; }
     ul { margin: 7px 0 0; padding-left: 18px; }
     li { margin: 7px 0; }
     li::marker { color: #2973a8; }
@@ -173,24 +100,29 @@
       letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .note {
-      margin-top: 18px;
-      padding: 16px 18px;
-      border: 1px solid #d7e4ef;
-      border-radius: 14px;
-      color: #43576b;
-      background: rgba(255,255,255,.82);
-      font-size: 13px;
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 0 0 12px;
     }
-    .note strong { color: #173b61; }
-    footer { padding: 0 18px 34px; color: #667689; text-align: center; font-size: 12px; }
-    a { color: #1769aa; text-underline-offset: 3px; }
+    .summary-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 18px 15px;
+      box-shadow: var(--shadow);
+    }
+    .sum-uet { border-top: 4px solid var(--uet); }
+    .sum-neu { border-top: 4px solid var(--neu); }
+    .summary-card h2 { margin: 0 0 6px; font-size: 15px; }
+    .sum-uet h2 { color: var(--uet); }
+    .sum-neu h2 { color: var(--neu); }
+    .summary-card p { margin: 0; font-size: 14px; }
     @media (max-width: 760px) {
-      header { padding: 42px 20px 30px; text-align: left; }
-      header p, h1 { margin-left: 0; }
-      main { padding: 20px 10px 40px; }
-      .context { align-items: flex-start; flex-direction: column; }
-      .table-shell { max-height: 72vh; border-radius: 13px; }
+      main { padding: 6px; }
+      .summary { grid-template-columns: 1fr; gap: 8px; margin-bottom: 8px; }
+      .table-shell { max-height: calc(100vh - 12px); border-radius: 10px; }
       table { min-width: 1500px; }
       col.route { width: 220px; }
       tbody th, tbody td { padding: 17px 15px; }
@@ -198,35 +130,26 @@
     @media print {
       @page { size: A3 landscape; margin: 10mm; }
       body { background: white; }
-      header { padding: 24px; print-color-adjust: exact; }
-      main { max-width: none; padding: 15px 0; }
-      .scroll-hint { display: none; }
+      main { max-width: none; padding: 0; }
       .table-shell { max-height: none; overflow: visible; border: 0; box-shadow: none; }
+      .summary-card { box-shadow: none; }
       table { min-width: 0; font-size: 9pt; }
       tbody th, thead th { position: static; print-color-adjust: exact; }
-      footer { padding-bottom: 0; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <span class="eyebrow">BẢN SO SÁNH NGẮN GỌN · 12/07/2026</span>
-    <h1>Ba con đường đào tạo</h1>
-    <p>Không chọn thay ứng viên. Bảng này làm rõ bản chất, điều kiện phát triển, hành trình cần chủ động và cửa vào nghề nghiệp của từng lựa chọn.</p>
-  </header>
-
   <main>
-    <div class="context">
-      <p>Ứng viên: nữ · Điểm quy đổi tham khảo: <strong>27,74</strong></p>
-      <div class="chips" aria-label="Ba định hướng">
-        <span class="chip">Technology first</span>
-        <span class="chip">Technology × Business</span>
-        <span class="chip">Finance × Technology</span>
+    <section class="summary" aria-label="Kết luận tổng quan">
+      <div class="summary-card sum-uet">
+        <h2>Chọn ĐH Công nghệ (UET)</h2>
+        <p>Đi theo hướng khoa học cơ bản. Sau này làm việc được trên nhiều domain: tài chính, kế toán, y tế, giáo dục... Yêu cầu tinh thần nghiên cứu, tự học và liên tục cập nhật.</p>
       </div>
-    </div>
-
-    <div class="scroll-hint"><span>↔</span> Kéo ngang để xem đủ bốn tiêu chí; cột lộ trình luôn được ghim.</div>
-
+      <div class="summary-card sum-neu">
+        <h2>Chọn ĐH Kinh tế (NEU)</h2>
+        <p>Đi vào chuyên môn hẹp, tạo lợi thế cạnh tranh từ business domain. Học tập và làm việc trong môi trường kinh doanh; thuận lợi để khởi nghiệp, đầu tư hoặc kinh doanh. Đổi lại cần đầu tư song song nhiều mặt: ngoại ngữ thứ hai, tự nghiên cứu sâu về công nghệ, kỹ năng mềm trong kinh doanh.</p>
+      </div>
+    </section>
     <div class="table-shell" tabindex="0" role="region" aria-label="Bảng so sánh ba con đường đào tạo">
       <table>
         <colgroup>
@@ -235,7 +158,7 @@
         <thead>
           <tr>
             <th>Lộ trình</th>
-            <th>1. Bản chất con đường</th>
+            <th>1. Học gì</th>
             <th>2. Tố chất để phát triển tốt</th>
             <th>3. Lưu ý hành trình học</th>
             <th>4. Công việc sau khi ra trường</th>
@@ -244,25 +167,24 @@
         <tbody>
           <tr class="uet">
             <th scope="row">
-              <span class="route-no">CON ĐƯỜNG 01</span>
               <span class="route-name">UET<br>AI / Khoa học dữ liệu</span>
-              <span class="route-sub">Chuyên môn công nghệ sâu</span>
-              <span class="score">2025: AI 27,75 · DS 27,38</span>
             </th>
             <td>
               <ul>
                 <li>Nền tảng: toán, khoa học máy tính, lập trình, dữ liệu.</li>
                 <li>AI: mô hình và hệ thống thông minh.</li>
                 <li>Data Science: phân tích, kỹ thuật dữ liệu, ứng dụng đa ngành.</li>
-                <li>Môi trường kỹ thuật; ít nữ; cơ hội nghề nghiệp rộng.</li>
+                <li>Ứng dụng rộng: công nghệ, tài chính, thương mại điện tử, y tế.</li>
+                <li>Lợi thế: môi trường công nghệ, nhiều cơ hội nghề nghiệp ở vị trí engineer/developer.</li>
               </ul>
             </td>
             <td>
               <ul>
                 <li>Chịu được toán và lập trình nặng.</li>
                 <li>Kiên trì; tự học; đọc tài liệu tiếng Anh.</li>
-                <li>Thích nghiên cứu, debug, thử sai.</li>
-                <li>Chủ động bù kỹ năng giao tiếp, thuyết trình.</li>
+                <li>Thích nghiên cứu, tỉ mỉ debug, thử sai.</li>
+                <li>Thích tự làm sản phẩm công nghệ</li>
+                <li>Chủ động bù kỹ năng mềm: giao tiếp, thuyết trình.</li>
               </ul>
             </td>
             <td>
@@ -291,10 +213,7 @@
 
           <tr class="neu">
             <th scope="row">
-              <span class="route-no">CON ĐƯỜNG 02</span>
               <span class="route-name">NEU<br>MIS / AI EP16</span>
-              <span class="route-sub">Công nghệ × Business</span>
-              <span class="score">2025: MIS 27,50 · EP16 25,44</span>
             </th>
             <td>
               <ul>
@@ -315,25 +234,27 @@
             </td>
             <td>
               <ul>
-                <li>Học chắc Python, SQL, Git, API, kiểm thử, cloud.</li>
+                <li>Cần học thêm về công nghệ để nắm chắc hơn: Python, DB, kiểm thử, cloud.</li>
                 <li>Dùng AI agents; tự đọc, debug, giải thích đầu ra.</li>
-                <li><strong>Mỗi năm một sản phẩm/dự án thật.</strong></li>
-                <li>Thực tập/part-time từ năm 2–3.</li>
-                <li>Rèn communication, presentation, tài liệu business–technology.</li>
-                <li>Ngoại ngữ thứ hai sau khi vững tiếng Anh.</li>
+                <li>Thử sức các mini start up để tận dụng lợi thế môi trường NEU.</li>
+                <li>Thực tập/ part time về business domain hoặc công nghệ</li>
+                <li>Nên học thêm 1 Ngoại ngữ thứ hai</li>
                 <li>Cân nhắc khóa quốc tế 1–1,5 năm; thử khởi nghiệp nhỏ.</li>
+                <li>Rèn luyện sự tự tin, chủ động, phát triển kỹ năng mềm. (yêu cầu cao hơn so với lựa chọn DH Công Nghệ)</li>
               </ul>
             </td>
             <td>
               <span class="phase">Mới ra trường</span>
               <ul>
-                <li>MIS: Data/BI, QA, ERP/Implementation, vận hành, Junior BA.</li>
-                <li>EP16: Junior AI/Data/Software Engineer nếu đủ chuẩn.</li>
-                <li>PO/PM/BA: cạnh tranh cao; không mặc định.</li>
+                <li>MIS: QA, Junior BA (cạnh tranh cao rất khó), junior developer.</li>
+                <li>EP16: Junior AI/Data/Software Engineer nếu tích luỹ đủ kỹ năng thực hành trong quá trình học</li>
+                <li>PO/PM/BA: cạnh tranh cao; gần như không thể xin được vị trí này khi ra trường</li>
+                <li>Phòng công nghệ của ngân hàng, công ty tài chính chứng khoán - sẽ phải cạnh tranh với engineer từ ngành CNTT</li>
+
               </ul>
               <span class="phase">Sau 3–5 năm</span>
               <ul>
-                <li>Senior/Lead hoặc BA, Solution, PO/PM/Project Manager.</li>
+                <li>Senior/Lead hoặc BA, Solution, PO/PM/Project Manager - tuỳ năng lực phát triển.</li>
                 <li>Lợi thế: kinh nghiệm kỹ thuật + business domain.</li>
               </ul>
             </td>
@@ -341,17 +262,14 @@
 
           <tr class="fin">
             <th scope="row">
-              <span class="route-no">CON ĐƯỜNG 03</span>
               <span class="route-name">NEU<br>Fintech &amp; Digital Banking EP09</span>
-              <span class="route-sub">Tài chính × Công nghệ</span>
-              <span class="score">2025: 26,29</span>
             </th>
             <td>
               <ul>
-                <li>Học bằng tiếng Anh.</li>
-                <li>Ngành/bằng: Tài chính–Ngân hàng 7340201.</li>
-                <li>Fintech, Ngân hàng số: tên chương trình/hướng chuyên sâu.</li>
-                <li>Nền tài chính trước; công nghệ để mở rộng.</li>
+                <li>Tài chính–ngân hàng, dữ liệu và sản phẩm số.</li>
+                <li>Ứng dụng công nghệ vào thanh toán, đầu tư, tín dụng, rủi ro.</li>
+                <li>Học bằng tiếng Anh; tiếp cận tài liệu và môi trường quốc tế.</li>
+                <li>Lợi thế: domain tài chính + công nghệ + tiếng Anh.</li>
               </ul>
             </td>
             <td>
@@ -366,26 +284,30 @@
             <td>
               <ul>
                 <li>Học chắc tài chính, kế toán, thống kê.</li>
-                <li>Tự học Python, SQL, dữ liệu, API, cloud, bảo mật, AI.</li>
+                <li>Tự học Python, DB, dữ liệu, API, cloud, bảo mật, AI.</li>
                 <li><strong>Mỗi năm một dự án tài chính–công nghệ.</strong></li>
                 <li>Thực tập/part-time từ năm 2–3.</li>
                 <li>Dùng AI agents; hiểu mã, dữ liệu, giả định, rủi ro.</li>
-                <li>Ngoại ngữ thứ hai/trao đổi sau khi vững tiếng Anh.</li>
                 <li>Khởi nghiệp: thử nhỏ; pilot năm 3; mở rộng theo dữ liệu.</li>
+                <li>Thực tập/ part time về business domain hoặc công nghệ</li>
+                <li>Nên học thêm 1 Ngoại ngữ thứ hai</li>
+                <li>Rèn luyện sự tự tin, chủ động, phát triển kỹ năng mềm. (yêu cầu cao hơn so với lựa chọn DH Công Nghệ)</li>
               </ul>
             </td>
             <td>
               <span class="phase">Mới ra trường</span>
               <ul>
-                <li>Financial/Data/Risk Analyst, Product Analyst.</li>
-                <li>Vận hành ngân hàng số, QA, triển khai Fintech.</li>
-                <li>Junior Software/Data Engineer nếu đủ chuẩn.</li>
+                <li>Junior Financial/Data/ Analyst - cần tích luỹ đủ kinh nghiệm trong thời gian học</li>
+                <li>Junior QA, BA cho các cty tài chính chứng khoán ngân hàng</li>
+                <li>Junior Software/Data Engineer nếu đủ kinh nghiệm thực hành trong quá trình học</li>
+                <li>Nhân viên ngân hàng</li>
               </ul>
               <span class="phase">Sau 3–5 năm</span>
               <ul>
-                <li>Risk/Fraud Analytics, Solution, chuyển đổi số.</li>
-                <li>PO/PM hoặc quản lý dự án Fintech.</li>
+                <li>Technical BA, consultant cho lĩnh vực chuyển đổi số, tài chính chúng khoán.</li>
+                <li>PO/PM hoặc quản lý dự án Fintech (hoặc các domain khác).</li>
                 <li>Senior/Lead nếu theo nhánh engineer.</li>
+                <li>quản lý bên nhánh ngân hàng nếu đi theo nhánh này</li>
               </ul>
             </td>
           </tr>
@@ -393,13 +315,6 @@
       </table>
     </div>
 
-    <div class="note">
-      <strong>Cách đọc bảng:</strong> điểm chuẩn 2025 chỉ là mốc tham khảo, không phải cam kết trúng tuyển 2026. Không có con đường nào tự động tạo thành công: trường cung cấp môi trường và điểm xuất phát; ứng viên phải tạo năng lực qua nền tảng, dự án, trải nghiệm, giao tiếp và uy tín nghề nghiệp.
-    </div>
   </main>
-
-  <footer>
-    Nguồn chi tiết và chương trình đào tạo chính thức được lưu trong bản báo cáo đầy đủ · Cập nhật 12/07/2026
-  </footer>
 </body>
 </html>
